@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Biz haqimizda - LOTUS Mehmonxonasi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#5d4201",
+              "primary-container": "#c5a059",
+              "on-surface": "#1b1c1c",
+              "outline-variant": "#d1c5b4",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e4e2e1",
+              "on-background": "#1b1c1c",
+              "secondary-container": "#e2dfde",
+              "on-secondary-fixed": "#1c1b1b",
+              "on-secondary-container": "#636262",
+              "surface-variant": "#e4e2e1",
+              "tertiary-fixed": "#e4e2de",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#a6a5a2",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c8c6c3",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#474744",
+              "error": "#ba1a1a",
+              "surface-tint": "#775a19",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#261900",
+              "on-tertiary-container": "#3b3b39",
+              "tertiary": "#5e5e5c",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fcf9f8",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-primary-container": "#4e3700",
+              "on-tertiary-fixed": "#1b1c1a",
+              "on-error": "#ffffff",
+              "primary-fixed": "#ffdea5",
+              "outline": "#7f7667",
+              "secondary": "#5f5e5e",
+              "inverse-primary": "#e9c176",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae7e7",
+              "primary": "#775a19",
+              "surface-container": "#f0eded",
+              "background": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "on-surface-variant": "#4e4639",
+              "secondary-fixed": "#e5e2e1",
+              "on-secondary-fixed-variant": "#474746",
+              "inverse-surface": "#303030",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .ambient-shadow {
+        box-shadow: 0px 20px 40px rgba(119, 90, 25, 0.06);
+      }
+      
+      /* Scroll Reveal Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Parallax Container Styles */
+      .parallax-container {
+        overflow: hidden;
+        position: relative;
+      }
+      .parallax-bg {
+        will-change: transform;
+        transition: transform 0.1s linear;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-b border-stone-200/20 dark:border-stone-800/20 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif font-bold tracking-tighter text-amber-800 dark:text-amber-500">LOTUS</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Xonalar</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Restoran</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">SPA</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Galereya</a>
+<a class="font-serif tracking-tight text-lg text-amber-800 dark:text-amber-400 border-b-2 border-amber-800 dark:border-amber-400 pb-1" href="#">Biz haqimizda</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-stone-600 cursor-pointer hover:opacity-80 transition-opacity duration-300" data-icon="dark_mode">dark_mode</span>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-3 rounded-xl font-medium hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20">Band qilish</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: Parallax Effect on Image -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden px-8 md:px-24">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 z-10 reveal active">
+<span class="text-primary font-label uppercase tracking-[0.3em] text-xs mb-6 block">An'ana va Hashamat</span>
+<h1 class="font-headline text-5xl md:text-7xl text-on-surface leading-[1.1] mb-8 -tracking-[0.02em]">
+                    Biz haqimizda - <br/>
+<span class="italic font-light">Mukammallik sari intilish.</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed font-light mb-10">
+                    LOTUS nafaqat mehmonxona, balki har bir tafsilotida sharqona mehmondo'stlik va zamonaviy qulaylik mujassam bo'lgan maskandir.
+                </p>
+</div>
+<div class="md:col-span-5 relative parallax-container">
+<div class="aspect-[4/5] rounded-full overflow-hidden ambient-shadow border-[12px] border-surface-container-low">
+<img class="w-full h-[120%] object-cover scale-110 parallax-bg" data-alt="luxury hotel exterior with golden sunset lighting and modern architectural lines reflecting in a calm pool" id="hero-parallax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6jq6sW1rlv-e7cbse4LemdeFb2yBK5b08viH5FGHPsRoblhZCJfTHjCD7mvPjpyw5-n6JF34QodkskT3F6QEF4QdYRMvVrkhAm430CiUXOLfykD5bo9vadE2Toh2B5MQdSDJdWr5gpL3Zi4jMiDYC5YxTKfDS6t-Otr7-GLEnaZFpGwJGwGvfZgFhUlf-9mHp1jsr8NTpLyWibnBoOQwhPAO06ML_0twXINI4YRHq91mlvGFDQViusB82DR492ie6QAblAhn1LU"/>
+</div>
+<div class="absolute -bottom-10 -left-10 glass-effect p-8 rounded-xl ambient-shadow max-w-[240px] hidden md:block border border-outline-variant/10 reveal active">
+<p class="font-headline italic text-primary text-2xl mb-2">15 yillik</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant">Betakror xizmat ko'rsatish tajribasi</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Values Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="flex flex-col items-center text-center reveal">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="loyalty">loyalty</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Mehmondo'stlik</h3>
+<p class="text-on-surface-variant leading-relaxed">Har bir mehmon biz uchun aziz. Bizning vazifamiz — Sizga o'z uyingizdagidek iliqlikni his qildirish.</p>
+</div>
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 0.1s;">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified">verified</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Sifat</h3>
+<p class="text-on-surface-variant leading-relaxed">Biz xizmat ko'rsatishning eng yuqori standartlariga amal qilamiz. Sifat — bu bizning asosiy tamoyilimiz.</p>
+</div>
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 0.2s;">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bed">bed</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Konfort</h3>
+<p class="text-on-surface-variant leading-relaxed">Zamonaviy texnologiyalar va ergonomik dizayn uyg'unligi Sizning dam olishingizni mukammal qiladi.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- History Timeline with Parallax Background Hints -->
+<section class="py-32 px-8 overflow-hidden relative">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-24 reveal">
+<h2 class="font-headline text-4xl mb-6">Bizning yo'limiz</h2>
+<div class="w-24 h-px bg-primary mx-auto"></div>
+</div>
+<div class="space-y-24 relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 hidden md:block"></div>
+<!-- 2009 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
+<div class="md:w-5/12 text-center md:text-right mb-8 md:mb-0">
+<span class="font-headline text-6xl text-primary/20 group-hover:text-primary/40 transition-colors">2009</span>
+<h4 class="font-headline text-2xl mt-4 mb-2">Tashkil topish</h4>
+<p class="text-on-surface-variant">LOTUS ilk bor o'z eshiklarini ochdi va shahrimizning hashamat timsoliga aylandi.</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-surface hidden md:block"></div>
+<div class="md:w-5/12"></div>
+</div>
+<!-- 2015 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between group reveal">
+<div class="md:w-5/12 text-center md:text-left mb-8 md:mb-0">
+<span class="font-headline text-6xl text-primary/20 group-hover:text-primary/40 transition-colors">2015</span>
+<h4 class="font-headline text-2xl mt-4 mb-2">Oltin Mukofot</h4>
+<p class="text-on-surface-variant">Xalqaro mehmonxonalar assotsiatsiyasi tomonidan "Yilning eng yaxshi butik-hoteli" deb topildi.</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-surface hidden md:block"></div>
+<div class="md:w-5/12"></div>
+</div>
+<!-- 2023 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
+<div class="md:w-5/12 text-center md:text-right mb-8 md:mb-0">
+<span class="font-headline text-6xl text-primary/20 group-hover:text-primary/40 transition-colors">2023</span>
+<h4 class="font-headline text-2xl mt-4 mb-2">Yangi Davr</h4>
+<p class="text-on-surface-variant">To'liq renovatsiya va "Smart Stay" texnologiyalarining joriy etilishi bilan yangi bosqichga chiqildi.</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-surface hidden md:block"></div>
+<div class="md:w-5/12"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-32 bg-surface-container-highest/30">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl mb-6 italic">Mukammallik ortidagi insonlar</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">Bizning jamoamiz — bu o'z ishining ustalari bo'lgan professionallar majmuasidir.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Manager Card -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-surface p-8 rounded-xl ambient-shadow border border-outline-variant/10 reveal">
+<div class="w-48 h-64 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="professional male hotel manager in a sharp charcoal suit standing in a luxurious lobby environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl9xPvzaYxEUkz8JnFwpH948tOommbltAWVqF_4OlekC3cq75T7ICgTzpsF6Y3RwckIyjKZGSnHSYXk76gSUp2HDJs9ak0hTf7w-pew1-2Q5CQhTMRck8nSPi9qfSiB5VR0IdSS_VtD441agSwHeJjPonk2J4_imc_h8WHp1rnp6Q8oODlHyjgpYo0lWt7VUJwiERouci5TZ3gQcv7AfJGnxh8sRC9i8a0KU8zvnOaixeWx3TqyOowqNtv2_NBSPNpVPRXQFyHTiI"/>
+</div>
+<div>
+<span class="text-primary font-label text-xs tracking-widest uppercase mb-2 block">Boshqaruvchi</span>
+<h4 class="font-headline text-2xl mb-4">Anvar Rasulov</h4>
+<p class="text-on-surface-variant leading-relaxed text-sm mb-6">
+                            "Bizning maqsadimiz — har bir mehmon uchun unutilmas xotiralar yaratishdir. Har bir tabassum biz uchun yutuq."
+                        </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary" data-icon="link">link</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+<!-- Chef Card -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-surface p-8 rounded-xl ambient-shadow border border-outline-variant/10 reveal" style="transition-delay: 0.15s;">
+<div class="w-48 h-64 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="renowned executive chef in white uniform plating a gourmet dish in a professional kitchen with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC4Tnh9FS9lISy2F0lpS2ZJTslrhXTF-JvieC99wrcXVjGmghbZ6RhOKKPEKqwsDdSc4eUpLito9HEP0dKiseNoHmENrIBoWbTlNmB9HbGWID40n1cdBVqa7FTBkW_61EZT2R45t6mbwLUlfGl2-H0GJ38o28SX8og1byfkaxn_xefmD70txhBYcThvDu5ikCdqbzuO74Dy6bXa_AfzErb9gOCbdLieHNfe4zfm6DOryDrQVpm9vEsAQi1MlzpX8mnZBwJrza66-g"/>
+</div>
+<div>
+<span class="text-primary font-label text-xs tracking-widest uppercase mb-2 block">Bosh Oshpaz</span>
+<h4 class="font-headline text-2xl mb-4">Shaxzoda Alimova</h4>
+<p class="text-on-surface-variant leading-relaxed text-sm mb-6">
+                            "Taom — bu san'at. Biz an'anaviy o'zbek taomlariga zamonaviy ruh berib, yangi lazzatlar dunyosini ochamiz."
+                        </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary" data-icon="restaurant">restaurant</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-8">
+<div class="max-w-4xl mx-auto text-center reveal">
+<span class="material-symbols-outlined text-primary-container text-6xl mb-8" data-icon="format_quote" data-weight="fill">format_quote</span>
+<p class="font-headline text-3xl md:text-4xl italic text-on-surface leading-tight mb-12">
+                "LOTUS — bu shunchaki mehmonxona emas, bu go'zallik va xotirjamlik maskani. Bu yerdagi xizmat darajasi Yevropaning eng yaxshi mehmonxonalaridan qolishmaydi."
+            </p>
+<div class="flex items-center justify-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a satisfied female traveler smiling with a warm natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3jpsdw52mQ2QN1_USBMvyR1lePoa4Hro4tKUN6m3XTW6cDEr6TyzySgWeuhnlhwWLl1tPqG20KQ16oE2G3Fyc1zC-ajPFM1BLrzHGhk4e-Cp0MpZ4MntOK6WDlIidPCDXexjkD2KYpWbWG9EylOGGgZyM9t8Xb3YQAga6oxpmEgcOa7uw08h04BsiKAPYQ0SDULJlGoznX94wNBNHk4b8XGCUEqtoTxTJzGQ0iq7Guy9F_5fL4_2OJMzDY4uWBofTEr9vVrLd1X4"/>
+</div>
+<div class="text-left">
+<p class="font-bold text-on-surface">Malika Saidova</p>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase">Doimiy mijoz</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section with Parallax Image -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto bg-stone-900 rounded-[2rem] overflow-hidden relative min-h-[500px] flex items-center justify-center text-center px-8 parallax-container">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-[140%] object-cover scale-110 parallax-bg" data-alt="interior view of a luxury hotel room at twilight with warm indoor lighting and panoramic window view" id="cta-parallax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx-sfEbfBMxrnWH3-21AN0E1_lj_-7X7nJqFq9URO0sWyZxQZtCSq1XYJ0bnkfBm2WjFhYmhXPW6oxT_8tgJO7bFABRnFbocS-d8rt8Dy_dXhG5CjVbg17QAav9SF-8ulOYJH3mXvGZoUE-BqyAoE_DMwVL1OXGoIPbhmAvK-cAh5k5GyiW_uD8bnBrZ2K6iehe6-uR88-d21Tz5NfDhzy61FNr1gcYitdmcJ0TNgSHCZwSvUGpRTen-0nus4Xug6Haez_5fIWivE"/>
+</div>
+<div class="relative z-10 max-w-2xl reveal">
+<h2 class="font-headline text-4xl text-white mb-8">O'z sarguzashtingizni bugun boshlang</h2>
+<p class="text-stone-300 mb-10 text-lg">Biz sizni kutib qolamiz va eng yuqori darajadagi xizmatni kafolatlaymiz.</p>
+<button class="bg-primary hover:bg-primary-container text-white px-12 py-4 rounded-xl font-medium transition-all shadow-xl shadow-black/20">Xonani band qilish</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 border-t border-stone-200 dark:border-stone-900 bg-stone-50 dark:bg-stone-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto items-start text-center md:text-left">
+<div>
+<div class="text-xl font-serif italic text-amber-900 dark:text-amber-400 mb-6">LOTUS</div>
+<p class="font-serif text-sm uppercase tracking-widest text-stone-500 leading-relaxed">
+                Toshkent shahri, Amir Temur ko'chasi, 45-uy.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500 font-bold mb-2">Navigatsiya</h5>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8" href="#">Xonalar</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8" href="#">Restoran</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8" href="#">SPA</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500 font-bold mb-2">Ma'lumot</h5>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8" href="#">Maxfiylik siyosati</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8" href="#">Foydalanish shartlari</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8" href="#">Aloqa</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500 font-bold mb-2">Ijtimoiy tarmoqlar</h5>
+<div class="flex justify-center md:justify-start gap-4">
+<span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary" data-icon="camera">camera</span>
+<span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-stone-200/50 dark:border-stone-800/50 text-center">
+<p class="font-serif text-xs uppercase tracking-widest text-stone-500">© 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.</p>
+</div>
+</footer>
+<script>
+    // Scroll Reveal Intersection Observer
+    const revealCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(revealCallback, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Simple Parallax Logic
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        // Hero Image Parallax
+        const heroImg = document.getElementById('hero-parallax');
+        if (heroImg) {
+            const limit = 800;
+            if (scrolled < limit) {
+                heroImg.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+        }
+
+        // CTA Image Parallax
+        const ctaImg = document.getElementById('cta-parallax');
+        if (ctaImg) {
+            const rect = ctaImg.parentElement.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const relativeScroll = window.innerHeight - rect.top;
+                ctaImg.style.transform = `translateY(${relativeScroll * 0.1}px)`;
+            }
+        }
+    });
+</script>
+</body></html>

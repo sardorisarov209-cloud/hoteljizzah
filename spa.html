@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="uz">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SPA & Wellness | LOTUS Mehmonxonasi</title>
+<meta name="description" content="LOTUS SPA — ruh va tana oromi. Terapevtik massaj, turk hamomi, fin saunasi va yopiq hovuz."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#c5a059","on-surface":"#1b1c1c","outline-variant":"#d1c5b4","surface-container-low":"#f6f3f2","on-surface-variant":"#4e4639","surface":"#fcf9f8","background":"#fcf9f8","primary":"#775a19","on-primary":"#ffffff","secondary":"#5f5e5e"},fontFamily:{"headline":["Noto Serif"],"body":["Inter"],"label":["Inter"]},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"}}}}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+  body{cursor:none;overflow-x:hidden}
+  #cc{width:20px;height:20px;background:rgba(119,90,25,.3);border:1px solid #775a19;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .15s ease-out,background .3s ease}
+  .ch{transform:scale(3)!important;background:rgba(119,90,25,.1)!important}
+  .glass{background:rgba(255,255,255,.75);backdrop-filter:blur(20px);border:1px solid rgba(209,197,180,.2)}
+  .dark .glass{background:rgba(18,18,18,.75);border-color:rgba(197,160,89,.15)}
+  .gold-btn{background:linear-gradient(135deg,#775a19 0%,#c5a059 100%)}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+  .reveal.active{opacity:1;transform:translateY(0)}
+  .parallax-img{will-change:transform;transform:scale(1.1)}
+  .dark ::-webkit-scrollbar{width:10px;background:#0a0a0a}
+  .dark ::-webkit-scrollbar-thumb{background:#775a19;border-radius:5px}
+</style>
+<script>
+  if(localStorage.getItem('theme')==='dark'||(!('theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}
+</script>
+</head>
+<body class="bg-surface dark:bg-[#0a0a0a] font-body text-on-surface dark:text-stone-300 transition-colors duration-500">
+<div id="cc"></div>
+
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200/20 dark:border-stone-800/50 transition-all duration-500" id="nav">
+  <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+    <a class="text-2xl font-serif uppercase tracking-[0.2em] text-amber-800 dark:text-primary-container" href="index.html">LOTUS</a>
+    <div class="hidden md:flex items-center space-x-10">
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="index.html#xonalar">Xonalar</a>
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="restoran.html">Restoran</a>
+      <a class="text-amber-800 dark:text-primary-container border-b border-amber-700 pb-0.5 font-serif italic" href="spa.html">SPA</a>
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="galereya.html">Galereya</a>
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="about.html">Biz haqimizda</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" id="tt">
+        <span class="material-symbols-outlined hidden dark:block text-primary-container">light_mode</span>
+        <span class="material-symbols-outlined block dark:hidden text-stone-600">dark_mode</span>
+      </button>
+      <a class="gold-btn text-white px-7 py-2.5 rounded-full font-label font-medium hover:scale-105 transition-transform shadow-lg shadow-primary/20" href="index.html#booking">Band qilish</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden" id="hero">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover parallax-img" id="hero-img"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH_I-smrHkI_iXbDenePZ3yKj3y_MDKAt9HQJFfNAHH6xP2obb3FHzCp1aTLPL9AIW8Fc_oXIustH7QT4wTavIMskmqpbBAyBGJ77x5llGpf5rvoQqJ7czUbdmIhSgHXUyWUE7oLmGFEz2kvJvF56IaK_U1nvbPkoU747m_K07otelVXZHDpz5MXESx1jseQOx3U3RioOzNqe375EwuYX71W8Gk5efSGKXtGMjTrtBXwHCi2Qq4B4wNefaoJoS8DsMs9polPg2r2Y"
+      alt="Luxury spa room"/>
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface dark:to-[#0a0a0a]"></div>
+  </div>
+  <div class="relative z-10 text-center px-6 max-w-4xl">
+    <span class="text-primary dark:text-primary-container font-label uppercase tracking-[0.4em] mb-4 block text-sm font-semibold reveal active">Lotus Wellness Sanctuary</span>
+    <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-on-surface dark:text-white mb-8 leading-tight reveal active" style="transition-delay:100ms">Ruh va tana oromi</h1>
+    <p class="text-on-surface-variant dark:text-stone-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed reveal active" style="transition-delay:200ms">Tabiiy elementlar va zamonaviy texnologiyalar uyg'unligi orqali haqiqiy xotirjamlik.</p>
+    <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center reveal active" style="transition-delay:300ms">
+      <a class="gold-btn text-white px-10 py-4 rounded-full font-label font-semibold shadow-xl shadow-primary/25 hover:scale-105 transition-transform" href="index.html#booking">Hozir band qilish</a>
+      <a class="glass border border-white/20 text-on-surface dark:text-white px-10 py-4 rounded-full font-label font-semibold hover:bg-white/20 transition-all" href="#services">Xizmatlar bilan tanishish</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Bento -->
+<section class="py-32 px-6 md:px-12 bg-surface dark:bg-[#0a0a0a] transition-colors duration-500" id="services">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+      <div class="max-w-xl">
+        <h2 class="font-headline text-4xl md:text-5xl text-on-surface dark:text-stone-100 mb-6">Bizning muolajalarimiz</h2>
+        <p class="text-on-surface-variant dark:text-stone-400 leading-relaxed">Har bir muolaja sizning ehtiyojlaringizga moslashtirilgan bo'lib, eng yuqori darajadagi mutaxassislar tomonidan amalga oshiriladi.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-stone-200 dark:bg-stone-900 h-[400px] reveal">
+        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 parallax-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTv3584f6xUhXB7zA55gYO3sgM084rnogLlA7JT1hZAlnj7PfuDDtgnNnfYvnquUjc_8v6hTG-NACOMMaIxqJ9UVWepwDT29g8EYz-eIqMdu8TrRd868MFE9AFxLABjKnzLoyCWQDBwVppDDvED8hJ7szOUQ_yJ5MThrJJompdzraOranVKnZeUabOOl4nczQh9A252HJWdCRLt2FQhnr3RpDcX3XT7uy5DxtL8pcT8eEk1bNQtzZKUDdbVRtigNrIvvHkDbqupIk" alt="Terapevtik Massaj"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-0 p-10">
+          <h3 class="font-headline text-3xl text-white mb-2">Terapevtik Massaj</h3>
+          <p class="text-white/80 max-w-md font-light">Tanadagi charchoqni chiqaruvchi va qon aylanishini yaxshilovchi professional massaj turlari.</p>
+        </div>
+      </div>
+      <div class="md:col-span-4 group relative overflow-hidden rounded-2xl h-[400px] reveal" style="transition-delay:100ms">
+        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxtUr2Oq4nNDsn1aiL3kxnTmnnQ6sQJf4RmJvKDDmrPeRUDqxYXbDV6pVyOPiWPNO7nMZlepkjDRwAEU5aq0RFca2gBUTyMbl7Pd0d3NAVfGQDIyQU3L6zFLTuBtKaCBbxgKPsFZ-MKWfLUWNaSbCBdiVD4Ye71Gc05d6UbxOHU35WCdTThfWzJd2UT40C2LyfjddkiHDb---n9Zq9nmS5-GQ7MY8_ahX8_wD4I9XAQiTt_b1CkhAzmY8KgDtFHm3dyB970bzk8GU" alt="Turk Hamomi"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div class="absolute bottom-0 p-10">
+          <h3 class="font-headline text-2xl text-white mb-2">Turk Hamomi</h3>
+          <p class="text-white/80 font-light">Qadimiy an'analar va zamonaviy qulaylik.</p>
+        </div>
+      </div>
+      <div class="md:col-span-4 group relative overflow-hidden rounded-2xl h-[450px] reveal">
+        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAny4RnmDxfClL8fI-FC7fyebCKbDEbgGQkFGSs_CpJFjc6uETWfhfUEiDpV7kGoiqjyShq0FqaSjUoSSxTj6viI84vwJihoST6nRE5fUYDHNgR0f_tH85fIF8EVRdSMkeeVvJDzZV5fEd6Z9TR0wDNiIX1NoiJP8g0fjBVgkasWhbu_c6LRfsmul5sCYxbvPFkiCWyCRMejSj2opLaioM9fk9a78sRzvzgvv1GE_zLyFb5uQRjaxdyPgzjoFCHI6XoBGVnsYo9ccc" alt="Fin Saunasi"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div class="absolute bottom-0 p-10">
+          <h3 class="font-headline text-2xl text-white mb-2">Fin Saunasi</h3>
+          <p class="text-white/80 font-light">Tana toksinlaridan xalos bo'lish va immunitetni mustahkamlash.</p>
+        </div>
+      </div>
+      <div class="md:col-span-8 group relative overflow-hidden rounded-2xl h-[450px] reveal" style="transition-delay:100ms">
+        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0bteNoQw7zl0mCKwkigBZHcjW5Li4al99RHrjH4QT4cNT0y0jTvHP-OO2J8CKm60fzPdJuwNpspXnFuioPta1NCtDOEG8eJHI9nlCFdNQdSMP52L2jw1X0uFn0qPUuX5QltWdGl3IUNclLwZEJId8cKhodbKbu3ErKih1cArGDaqiANuZ6eEc3M1e7P70XHdyjIM22xMY5391Rk5Ezk9q12j300-BWVBdLV30M0dD7_oJuu8iPH1URzlUUVlegIPjt1A0XEHSiKQ" alt="Yopiq Hovuz"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-0 p-10">
+          <h3 class="font-headline text-3xl text-white mb-2">Yopiq Hovuz</h3>
+          <p class="text-white/80 max-w-md font-light">Harorat nazorat qilinadigan kristaldek tiniq suv va dam olish zonalari.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="py-32 bg-stone-100 dark:bg-[#121212] transition-colors duration-500" id="pricing">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20 reveal">
+      <span class="text-primary dark:text-primary-container font-label uppercase tracking-widest text-sm mb-4 block">Eksklyuziv takliflar</span>
+      <h2 class="font-headline text-4xl md:text-5xl text-on-surface dark:text-stone-100">Wellness Paketlar</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div class="bg-surface dark:bg-stone-900 p-12 rounded-2xl flex flex-col border border-outline-variant/10 dark:border-stone-800 hover:border-primary/30 transition-all duration-500 reveal">
+        <h3 class="font-headline text-2xl mb-2 dark:text-stone-100">Relax Paket</h3>
+        <p class="text-on-surface-variant dark:text-stone-400 text-sm mb-8">Yengil hordiq chiqarishni xohlovchilar uchun</p>
+        <div class="text-4xl font-headline text-primary dark:text-primary-container mb-8">450,000 <span class="text-sm font-body text-on-surface-variant tracking-normal">UZS</span></div>
+        <ul class="space-y-4 mb-12 flex-grow">
+          <li class="flex items-center gap-3 text-sm text-on-surface dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>60 daqiqa massaj</li>
+          <li class="flex items-center gap-3 text-sm text-on-surface dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Hovuz va sauna (cheksiz)</li>
+          <li class="flex items-center gap-3 text-sm text-on-surface dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Fitnes markazi</li>
+        </ul>
+        <a class="w-full py-4 border border-outline dark:border-stone-700 text-on-surface dark:text-stone-300 rounded-full font-label font-medium hover:bg-on-surface dark:hover:bg-stone-700 hover:text-white transition-all text-center" href="index.html#booking">Tanlash</a>
+      </div>
+      <div class="bg-white dark:bg-stone-800 p-12 rounded-2xl flex flex-col border-2 border-primary shadow-2xl shadow-primary/10 relative md:-translate-y-4 reveal" style="transition-delay:150ms">
+        <div class="absolute top-0 right-10 transform -translate-y-1/2 bg-primary text-white px-4 py-1 text-xs font-label uppercase tracking-widest rounded-full">Ommabop</div>
+        <h3 class="font-headline text-2xl mb-2 dark:text-stone-100">VIP Sanctuary</h3>
+        <p class="text-on-surface-variant dark:text-stone-400 text-sm mb-8">To'liq qayta tiklanish va hashamat</p>
+        <div class="text-4xl font-headline text-primary dark:text-primary-container mb-8">1,200,000 <span class="text-sm font-body text-on-surface-variant tracking-normal">UZS</span></div>
+        <ul class="space-y-4 mb-12 flex-grow">
+          <li class="flex items-center gap-3 text-sm dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Premium 120 daqiqa muolaja</li>
+          <li class="flex items-center gap-3 text-sm dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Individual hamom seansi</li>
+          <li class="flex items-center gap-3 text-sm dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Detoks menyu va ichimliklar</li>
+          <li class="flex items-center gap-3 text-sm dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Maxsus kiyinish xonasi</li>
+        </ul>
+        <a class="w-full py-4 gold-btn text-white rounded-full font-label font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform text-center" href="index.html#booking">Hozir band qilish</a>
+      </div>
+      <div class="bg-surface dark:bg-stone-900 p-12 rounded-2xl flex flex-col border border-outline-variant/10 dark:border-stone-800 hover:border-primary/30 transition-all duration-500 reveal" style="transition-delay:300ms">
+        <h3 class="font-headline text-2xl mb-2 dark:text-stone-100">Couple's Retreat</h3>
+        <p class="text-on-surface-variant dark:text-stone-400 text-sm mb-8">Ikki kishi uchun romantik lahzalar</p>
+        <div class="text-4xl font-headline text-primary dark:text-primary-container mb-8">1,800,000 <span class="text-sm font-body text-on-surface-variant tracking-normal">UZS</span></div>
+        <ul class="space-y-4 mb-12 flex-grow">
+          <li class="flex items-center gap-3 text-sm text-on-surface dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Parallel juftlik massaji</li>
+          <li class="flex items-center gap-3 text-sm text-on-surface dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Shaxsiy jacuzzi xonasi</li>
+          <li class="flex items-center gap-3 text-sm text-on-surface dark:text-stone-300"><span class="material-symbols-outlined text-primary dark:text-primary-container text-xl">check_circle</span>Mevalar va shampan vinosi</li>
+        </ul>
+        <a class="w-full py-4 border border-outline dark:border-stone-700 text-on-surface dark:text-stone-300 rounded-full font-label font-medium hover:bg-on-surface dark:hover:bg-stone-700 hover:text-white transition-all text-center" href="index.html#booking">Tanlash</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-stone-50 dark:bg-black w-full py-16 px-8 border-t border-stone-200 dark:border-stone-900 transition-colors duration-500">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <div class="col-span-2 md:col-span-1"><div class="font-serif text-xl text-stone-800 dark:text-primary-container mb-6 tracking-widest uppercase">LOTUS</div><p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">Ruh va tana oromi uchun eng yaxshi joy.</p></div>
+    <div><h4 class="font-semibold text-stone-700 dark:text-stone-300 mb-6 text-xs uppercase tracking-[0.2em]">Sahifalar</h4><ul class="space-y-3 text-sm"><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="index.html">Bosh sahifa</a></li><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="restoran.html">Restoran</a></li><li><a class="text-amber-700 dark:text-primary-container font-semibold" href="spa.html">SPA</a></li><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="galereya.html">Galereya</a></li><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="about.html">Biz haqimizda</a></li></ul></div>
+    <div><h4 class="font-semibold text-stone-700 dark:text-stone-300 mb-6 text-xs uppercase tracking-[0.2em]">Bog'lanish</h4><ul class="space-y-3 text-stone-500 dark:text-stone-400 text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span>+998 90 123 45 67</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span>info@lotus-hotel.uz</li></ul></div>
+    <div><h4 class="font-semibold text-stone-700 dark:text-stone-300 mb-6 text-xs uppercase tracking-[0.2em]">Manzil</h4><p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">Jizzax shahri, Sh. Rashidov ko'chasi, 45-uy.</p></div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-stone-200 dark:border-stone-900 text-center"><p class="text-stone-400 dark:text-stone-500 text-xs tracking-widest uppercase">© 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.</p></div>
+</footer>
+
+<script>
+  document.getElementById('tt').addEventListener('click',()=>{const d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');});
+  const cc=document.getElementById('cc');
+  document.addEventListener('mousemove',e=>{cc.style.left=e.clientX+'px';cc.style.top=e.clientY+'px'});
+  document.querySelectorAll('a,button,input,select,.group').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cc.classList.add('ch'));
+    el.addEventListener('mouseleave',()=>cc.classList.remove('ch'));
+  });
+  window.addEventListener('scroll',()=>{
+    const y=window.pageYOffset;
+    const hi=document.getElementById('hero-img');
+    if(hi)hi.style.transform=`scale(1.1) translateY(${y*.3}px)`;
+    document.querySelectorAll('.parallax-img').forEach(img=>{
+      if(img.id==='hero-img')return;
+      const r=img.parentElement.getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>0){
+        const rel=(window.innerHeight-r.top)/(window.innerHeight+r.height);
+        img.style.transform=`scale(1.2) translateY(${(rel-.5)*50}px)`;
+      }
+    });
+    const nav=document.getElementById('nav');
+    if(y>100){nav.classList.add('py-4','shadow-xl');nav.classList.remove('py-6');}
+    else{nav.classList.remove('py-4','shadow-xl');nav.classList.add('py-6');}
+  });
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')}),{threshold:.15,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

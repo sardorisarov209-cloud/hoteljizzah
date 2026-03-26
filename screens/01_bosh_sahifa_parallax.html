@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth transition-colors duration-500" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LOTUS Mehmonxonasi | Hashamat va qulaylik bir joyda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#d1c5b4",
+                        "primary-container": "#c5a059",
+                        "on-surface": "#1b1c1c",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "surface-variant": "#e4e2e1",
+                        "on-secondary-container": "#636262",
+                        "secondary-container": "#e2dfde",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#a6a5a2",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e4e2de",
+                        "on-tertiary-container": "#3b3b39",
+                        "on-primary-fixed": "#261900",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#775a19",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-on-surface": "#f3f0ef",
+                        "tertiary": "#5e5e5c",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#e9c176",
+                        "outline": "#7f7667",
+                        "primary-fixed": "#ffdea5",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#1b1c1a",
+                        "on-primary-container": "#4e3700",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container": "#f0eded",
+                        "background": "#fcf9f8",
+                        "primary": "#775a19",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface-variant": "#4e4639",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.filled-icon {
+    font-variation-settings: "FILL" 1
+    }
+body {
+    cursor: none;
+    overflow-x: hidden
+    }
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: rgba(119, 90, 25, 0.3);
+    border: 1px solid #775a19;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease-out, background 0.3s ease
+    }
+.cursor-hover {
+    transform: scale(3);
+    background: rgba(119, 90, 25, 0.1) !important
+    }
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(209, 197, 180, 0.15)
+    }
+.dark .glass-card {
+    background: rgba(18, 18, 18, 0.7);
+    border-color: rgba(197, 160, 89, 0.15)
+    }
+.hero-bg {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuChhd-xB9uABSerWIzpZEYSyFruqPGIMfjDpLc595wMTS91oUheQR5NfOO2yPfQxR81q5RuGoBTCZgKTpkC5GCWMKeKlmKyMRR-099BGSYup9_JCcM7AeeipnxmzqxqW9U2sKQ-qXCTKviqqmRtUMYSiMbGju6Mqpshc7SFenVZzEh9sGppiJLykXoZ8bZGTzjqIgsgvB5-j5SLbNOpnZIEVAsOjkpz1w2_csQ1soGoZouJ_m7kfBtLVUbmNflJ4G2_38lDwqWOxHY);
+    background-size: cover;
+    background-position: center;
+    will-change: transform
+    }
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 1.5rem
+    }
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto
+        }
+    }
+/* Scroll reveal initial states */
+.reveal {
+    opacity: 0;
+    transform: translatey(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+.reveal.active {
+    opacity: 1;
+    transform: translatey(0)
+    }
+.reveal-left {
+    opacity: 0;
+    transform: translatex(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out
+    }
+.reveal-left.active {
+    opacity: 1;
+    transform: translatex(0)
+    }
+.reveal-right {
+    opacity: 0;
+    transform: translatex(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out
+    }
+.reveal-right.active {
+    opacity: 1;
+    transform: translatex(0)
+    }
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+    width: 10px;
+    background: #0a0a0a
+    }
+.dark ::-webkit-scrollbar-thumb {
+    background: #775a19;
+    border-radius: 5px
+    }</style>
+<script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-surface dark:bg-[#0a0a0a] font-body text-on-surface dark:text-stone-300 selection:bg-primary/30 transition-colors duration-500">
+<div id="custom-cursor"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200/15 dark:border-stone-800/50 transition-all duration-500 shadow-[0_20px_40px_rgba(119,90,25,0.06)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif uppercase tracking-[0.2em] text-amber-800 dark:text-primary-container">LOTUS</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic tracking-tight" href="01_bosh_sahifa_parallax.html">Bosh sahifa</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic tracking-tight" href="02_restoran_parallax.html">Restoran</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic tracking-tight" href="04_spa_parallax.html">SPA</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic tracking-tight" href="05_galereya_parallax.html">Galereya</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic tracking-tight" href="03_biz_haqimizda_parallax.html">Biz haqimizda</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors flex items-center justify-center" id="theme-toggle">
+<span class="material-symbols-outlined hidden dark:block text-primary-container" id="theme-toggle-dark-icon">light_mode</span>
+<span class="material-symbols-outlined block dark:hidden text-stone-600" id="theme-toggle-light-icon">dark_mode</span>
+</button>
+<button class="material-symbols-outlined text-stone-600 dark:text-stone-400">language</button>
+<a class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-2.5 rounded-xl font-serif italic tracking-tight hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20" href="#booking">Band qilish</a>
+<button class="md:hidden material-symbols-outlined text-stone-600 dark:text-stone-400">menu</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 hero-bg" data-alt="Entrance of the LOTUS Hotel" id="hero-parallax"></div>
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<h1 class="font-headline text-5xl md:text-8xl text-white mb-6 tracking-tighter drop-shadow-2xl reveal active">LOTUS Mehmonxonasi</h1>
+<p class="font-serif italic text-xl md:text-3xl text-white/90 mb-12 tracking-wide reveal active" style="transition-delay: 200ms;">Hashamat va qulaylik bir joyda</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal active" style="transition-delay: 400ms;">
+<a class="w-full md:w-auto bg-gradient-to-r from-primary to-primary-container text-white px-12 py-4 rounded-xl font-semibold tracking-wide hover:shadow-2xl hover:shadow-primary/40 transition-all duration-500 scale-100 active:scale-95" href="#xonalar">Band qilish</a>
+<a class="w-full md:w-auto bg-white/10 backdrop-blur-xl border border-white/20 text-white px-12 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-500" href="https://www.google.com/maps/place/LOTUS+Mehmonxonasi/@40.109227,67.8128126,13z" target="_blank">Batafsil ma’lumot</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-white text-4xl">expand_more</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-8 bg-surface-container-low dark:bg-[#121212] transition-colors duration-500 overflow-hidden" id="about">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="relative reveal-left">
+<div class="aspect-[4/5] rounded-full overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Staff in a grand marble lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhfSxopUV_w30Wt6VcJHf01G5hLZgq_p6WPykR7frL_QjoES2w-lMbUPCL-PjLTEiGy-QAE1IkmCt5WiUJ6PkjNCA2gNB7JPdIJqduZEkXx2JP8peRPCK3VHXUlcU78qmFb7tWQzE41htWYKZbdsjttaj7jXF58lLGs3LXs5S5Axot1G8A2rp3a-FOr_YDh0vG2aLAU9SjNUv7gAUz6FYF7quJ79k_M4zx0YJKCDlNX1SW7UHXIxaUufzoQqSZTofSbWrXLUjIbzI"/>
+</div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 glass-card rounded-2xl p-8 hidden md:block reveal" style="transition-delay: 500ms;">
+<p class="font-headline text-3xl text-primary dark:text-primary-container mb-2">15+</p>
+<p class="text-on-surface-variant dark:text-stone-400 text-sm font-medium tracking-widest uppercase">Yillik Tajriba</p>
+<p class="mt-4 text-xs italic text-stone-500 dark:text-stone-500">Sizning rohatlanishingiz bizning asosiy vazifamizdir.</p>
+</div>
+</div>
+<div class="reveal-right">
+<span class="text-primary dark:text-primary-container font-serif italic tracking-widest uppercase mb-4 block">Xush kelibsiz</span>
+<h2 class="font-headline text-4xl md:text-6xl text-on-surface dark:text-stone-100 mb-8 leading-tight">Mukammallik sari intilish</h2>
+<p class="text-on-surface-variant dark:text-stone-400 text-lg leading-relaxed mb-12">
+                    LOTUS Mehmonxonasi - bu nafaqat dam olish joyi, balki hayotingizdagi unutilmas lahzalar maskanidir. Biz har bir mehmonimiz uchun alohida e'tibor va yuqori darajadagi xizmatni kafolatlaymiz.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex items-center space-x-4 group reveal" style="transition-delay: 100ms;">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-stone-900 flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500">
+<span class="material-symbols-outlined dark:text-primary-container">wifi</span>
+</div>
+<span class="font-medium text-stone-700 dark:text-stone-300">Bepul Wi-Fi</span>
+</div>
+<div class="flex items-center space-x-4 group reveal" style="transition-delay: 200ms;">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-stone-900 flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500">
+<span class="material-symbols-outlined dark:text-primary-container">local_parking</span>
+</div>
+<span class="font-medium text-stone-700 dark:text-stone-300">Avtoturargoh</span>
+</div>
+<div class="flex items-center space-x-4 group reveal" style="transition-delay: 300ms;">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-stone-900 flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500">
+<span class="material-symbols-outlined dark:text-primary-container">pool</span>
+</div>
+<span class="font-medium text-stone-700 dark:text-stone-300">Hovuz</span>
+</div>
+<div class="flex items-center space-x-4 group reveal" style="transition-delay: 400ms;">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-stone-900 flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500">
+<span class="material-symbols-outlined dark:text-primary-container">restaurant</span>
+</div>
+<span class="font-medium text-stone-700 dark:text-stone-300">Nonushta</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rooms Section -->
+<section class="py-32 px-8 bg-surface dark:bg-[#0a0a0a] transition-colors duration-500" id="xonalar">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 reveal">
+<div>
+<h2 class="font-headline text-5xl text-on-surface dark:text-stone-100 mb-4">Bizning Xonalar</h2>
+<p class="text-on-surface-variant dark:text-stone-400 italic">O'zingizga mos bo'lgan ideal xonani tanlang</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-primary text-white hover:bg-primary-container transition-all">Hammasi</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant dark:border-stone-800 text-on-surface-variant dark:text-stone-400 hover:border-primary hover:text-primary transition-all">Standart</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant dark:border-stone-800 text-on-surface-variant dark:text-stone-400 hover:border-primary hover:text-primary transition-all">Deluks</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant dark:border-stone-800 text-on-surface-variant dark:text-stone-400 hover:border-primary hover:text-primary transition-all">Lyuks</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<div class="group cursor-pointer reveal" style="transition-delay: 100ms;">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="minimalist modern hotel room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2BzlNqEl87vzzqT7Po2y2Hhyr2yGBZUPUdsl_jdZgl7w6c8YUJI5TmJ7YAgpt0jDLrjy0UHPqtmPpQPK9bjyP-3hiXU_hIFh84JPcbGI60AnRsWdYV7-yfEtS8a89TZgPPGpXGxQ2eSPYC_kAdIRloxUhL-58lGJXahr2lg3bN0rDI9HlMEEeQe30sGwUaHb5mBUyUzjfGYYCg5GqCLYlBKGd1BhcRRkgUUGdpObOJxilF-RGnB-uXxLULhtxpCZMra2nU2aoVg"/>
+<div class="absolute top-6 right-6">
+<span class="px-4 py-1.5 rounded-full bg-green-500/90 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest">Bo‘sh</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl mb-2 group-hover:text-primary dark:group-hover:text-primary-container transition-colors dark:text-stone-200">Standart Xona</h3>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed line-clamp-2">Qulay va shinam xona, barcha zaruriy jihozlar bilan ta'minlangan.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-primary dark:text-primary-container font-bold text-xl">300,000</span>
+<span class="text-stone-400 dark:text-stone-500 text-sm"> / tun</span>
+</div>
+<a class="text-primary dark:text-primary-container font-semibold text-sm hover:underline underline-offset-8 transition-all" href="#booking">Band qilish →</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer reveal" style="transition-delay: 300ms;">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="luxury deluxe hotel suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYX2sZMp3EZ1c_yTDSwuFy1nXgTKGm3_tEqKEoXC4QDuma_RaTmCzFH12hDCEvLN0Hz0AvM3EppOKrxHVvaPiSFPpXJMRSEjY-_yODY8Q6GA2KSe9HyD-fUN2wAfGgwIsRUzt13csQgpb9Bwssv3qHcu4unxn5_YeChnePyEqlUEyfm03pR22lJZozjBX1_vgX5zBDph7czdicNNOCc5azOrRaC3QQR5l7ryK88YAKlG0iUrx4tz0ug81NaAqKgPNBK-sTtvYLJj8"/>
+<div class="absolute top-6 right-6">
+<span class="px-4 py-1.5 rounded-full bg-red-500/90 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest">Band</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl mb-2 group-hover:text-primary dark:group-hover:text-primary-container transition-colors dark:text-stone-200">Deluks Suite</h3>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed line-clamp-2">Keng va dabdabali interyerga ega xona, premium xizmatlar bilan.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-primary dark:text-primary-container font-bold text-xl">750,000</span>
+<span class="text-stone-400 dark:text-stone-500 text-sm"> / tun</span>
+</div>
+<button class="text-stone-300 dark:text-stone-700 font-semibold text-sm cursor-not-allowed" disabled="">Band qilingan</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer reveal" style="transition-delay: 500ms;">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="ultra luxurious presidential suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU8M2pI3CuSrw5jp1drkAL8D6LbVCl7bov_png4E8aRheM63ozVfVqdcPov0d5iykpmmVpWg8UFexG4ll28jKhFLG46XI_zWr5vMBWDpxCOWCK90OibLlVexmFlqk1IEpDg2Xcw5qXjncF2HNXY-HY5HTLfKyAG9AwdksmV62dOQSNmS9uB-BL6IHG1syGrkXldBYiPsAqaHo_9L0373zL1-JS0jHJrv9S1oALV0BaKMMC_J92pSeS3bhDi1wo0FX5KmN-3JZRepI"/>
+<div class="absolute top-6 right-6">
+<span class="px-4 py-1.5 rounded-full bg-green-500/90 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest">Bo‘sh</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl mb-2 group-hover:text-primary dark:group-hover:text-primary-container transition-colors dark:text-stone-200">Qirollik Lyuksi</h3>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed line-clamp-2">Oliy martabali mehmonlar uchun mo'ljallangan eng dabdabali xonamiz.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-primary dark:text-primary-container font-bold text-xl">1,500,000</span>
+<span class="text-stone-400 dark:text-stone-500 text-sm"> / tun</span>
+</div>
+<a class="text-primary dark:text-primary-container font-semibold text-sm hover:underline underline-offset-8 transition-all" href="#booking">Band qilish →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-32 px-8 bg-surface-container-low dark:bg-[#121212] transition-colors duration-500" id="galereya">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-5xl text-center mb-20 dark:text-stone-100 reveal">Galereya</h2>
+<div class="bento-grid">
+<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group reveal">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="outdoor infinity pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbPzb0SRBzMNE4iS4R8TKrh43iVuCmnqxjSkx91k0HIvtVBqpLxkCbDsDyBWyC1I6B1na8H6ACP7Os3a7L0oMYSeU1ajtIbjhIUGdylqhf3ek6GuSvr8K3YWfK0ZIk58jFEvZlKpn7jjtsogD4joHo_HzpliTPc5MprIV4meTFGWhag-YgaU5RgjN2TutfXYyI_VFc_5rQMu53kdFUuPvoZl-wVscWBzwA6TiOKSjw2AYlfISSPfpkrY9VSy1z_VTWZuWeZwon4AE"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl">zoom_in</span>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden relative group reveal" style="transition-delay: 200ms;">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="fine dining restaurant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0NJ6X6LuFjgBEoYtLPdrSQBQJGYxuj-8SCFBxdTLb6086o5SrpqYhiPNulG5MBvD9AD4pqXzdDEkGVPnAtVA4NdkoGEC6w8CWp8nCKPwFa4M4oMXkfgNOmVOdCJ3LJwoJHO_nwZRi1pIlbKZk7nKznYs3ePmFwVuEoWC-meoJ1H_sluq4ffA8FLYQ_PFzroC4iwpr94hxHBJUGuRs5HKT3AssTu8g1CNylochaBDx9QmvztkHwL7HgkPL9mrHqkHM3fR27zS68xc"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden relative group reveal" style="transition-delay: 400ms;">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="luxury spa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClCDMyz7rOdV-fNnKb9VkX_ORlBYOx9gQXjjw9CvVni54TvY1sF9_FKXRByjHpo-yDPy9O_45IB1jJHfytU0g6HNOI-i6DuZ9ejdRGpVFry3PSckuelmFi5eh8BuAZfUHg5XlMdoDdRik-xvCHsuEAsGCuyPR-iFslGs3JkgmWXmnk-yboK_FPfiDVv5HlxnxUO9GzUKD4dOw093DuqkoiNe4YXFp9dbaKWKruINCmA1DMJLmKAPwlPplEyj6TzAN5llsYJeMHnd8"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+<div class="col-span-2 rounded-2xl overflow-hidden relative group reveal" style="transition-delay: 600ms;">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="hotel courtyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA92CjhKUBffi33oWsya1d9Kg4GGm3ki35g2SZj30HvWtbhzq5mJkdRq5XZ8p0tDn3vFDwvLrA10kAlla3u0CXB-ze3iWH1Hbvl-43-zN-QAbvHO4ecIUPSCW-WQF6672yQm_-8r6BlXSaTxT36smfnM207Q75W6Y_pQ-uYa3WmHK0-eNiVpbsd7OOZrK-hrnSL-q8V8JZ-9NgMS3jJhDF9zIgIDyYpt4qIozAeIpcKOMS84iuCFBV2whsg8e1DD8zcGjHcUaTRl_Y"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Form Section -->
+<section class="py-32 px-8 bg-surface dark:bg-[#0a0a0a] transition-colors duration-500" id="booking">
+<div class="max-w-5xl mx-auto glass-card p-12 md:p-20 rounded-[2rem] shadow-2xl relative overflow-hidden reveal">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 dark:bg-primary-container/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl md:text-5xl mb-4 dark:text-stone-100">Xonani Band Qilish</h2>
+<p class="text-stone-500 dark:text-stone-400 italic">Sizga eng qulay vaqt va xonani tanlang</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-stone-700 dark:text-stone-300 ml-1">To'liq ismingiz</label>
+<input class="w-full px-6 py-4 rounded-xl border-outline-variant/30 dark:border-stone-800 bg-surface dark:bg-stone-900 text-on-surface dark:text-white focus:ring-primary focus:border-primary transition-all" placeholder="Masalan: Alisher Navoiy" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-stone-700 dark:text-stone-300 ml-1">Telefon raqamingiz</label>
+<input class="w-full px-6 py-4 rounded-xl border-outline-variant/30 dark:border-stone-800 bg-surface dark:bg-stone-900 text-on-surface dark:text-white focus:ring-primary focus:border-primary transition-all" placeholder="+998 90 123 45 67" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-stone-700 dark:text-stone-300 ml-1">Kelish sanasi</label>
+<input class="w-full px-6 py-4 rounded-xl border-outline-variant/30 dark:border-stone-800 bg-surface dark:bg-stone-900 text-on-surface dark:text-white focus:ring-primary focus:border-primary transition-all [color-scheme:light] dark:[color-scheme:dark]" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-stone-700 dark:text-stone-300 ml-1">Ketish sanasi</label>
+<input class="w-full px-6 py-4 rounded-xl border-outline-variant/30 dark:border-stone-800 bg-surface dark:bg-stone-900 text-on-surface dark:text-white focus:ring-primary focus:border-primary transition-all [color-scheme:light] dark:[color-scheme:dark]" type="date"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="block text-sm font-semibold text-stone-700 dark:text-stone-300 ml-1">Xona turi</label>
+<select class="w-full px-6 py-4 rounded-xl border-outline-variant/30 dark:border-stone-800 bg-surface dark:bg-stone-900 text-on-surface dark:text-white focus:ring-primary focus:border-primary transition-all">
+<option>Standart Xona</option>
+<option>Deluks Suite</option>
+<option>Qirollik Lyuksi</option>
+</select>
+</div>
+<div class="md:col-span-2 pt-6">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1" type="submit">So'rov yuborish</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-8 bg-primary/5 dark:bg-primary-container/5 transition-colors duration-500">
+<div class="max-w-4xl mx-auto text-center reveal">
+<span class="material-symbols-outlined text-primary dark:text-primary-container text-6xl mb-12 filled-icon">format_quote</span>
+<div class="transition-all duration-700 opacity-100" id="testimonial-container">
+<p class="font-headline text-2xl md:text-3xl italic leading-relaxed text-stone-800 dark:text-stone-200 mb-8">
+                    "Bu hayotimdagi eng yaxshi dam olish bo'ldi. Xizmat ko'rsatish darajasi hayratlanarli, xonalar esa juda shinam."
+                </p>
+<div class="flex items-center justify-center space-x-4">
+<img class="w-16 h-16 rounded-full object-cover border-4 border-white dark:border-stone-800 shadow-lg" data-alt="professional male portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXG5F30IViH25d-DuB4k6y_jAkChild-YcsnF7UexTe1cG43AX8UJf6a_CT9n73LCFuX5OD-CMhbgWCElj5CjO8-_3LtU7oNYIefL0wkB5PRGeS9kMtFA7yUmOQzakr8OglEy29MWB2OQc0LSoUUofNdZ5DfGmlW8qxSXHLnGQjUqMtxOAJ9RQPrAs_etfkQ_UnWH6VHSdGdNYLPvQfptYvpEnIsHOjuD0fNY7KB5jS_dMGJhrSmU7Gd7aX9mmlwTDQ0dIeovBVj0"/>
+<div class="text-left">
+<p class="font-bold text-stone-900 dark:text-stone-100">Jasur Jumaboyev</p>
+<p class="text-sm text-stone-500 dark:text-stone-400">Biznesmen</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="py-32 px-8 bg-surface dark:bg-[#0a0a0a] transition-colors duration-500" id="location">
+<div class="max-w-7xl mx-auto overflow-hidden rounded-[2.5rem] shadow-2xl relative h-[600px] border border-outline-variant/20 dark:border-stone-800/50 reveal">
+<iframe allowfullscreen="" class="w-full h-full border-0 grayscale hover:grayscale-0 dark:brightness-[0.8] dark:contrast-[1.2] transition-all duration-1000" data-location="Jizzakh, Uzbekistan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12000!2d67.8513356!3d40.1092208!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b295a1d6b06fa7%3A0x8215cffb14fdf822!2sLOTUS%20Mehmonxonasi!5e0!3m2!1suz!2s!4v1710123456789!5m2!1suz!2s"></iframe>
+<div class="absolute bottom-10 left-10 glass-card p-8 rounded-2xl max-w-xs shadow-2xl reveal" style="transition-delay: 300ms;">
+<h3 class="font-headline text-2xl mb-4 dark:text-stone-100">Bizning Manzil</h3>
+<p class="text-stone-600 dark:text-stone-400 mb-6 text-sm">Jizzax shahri, Sh. Rashidov ko'chasi, 45-uy. Markaziy bog' yonida.</p>
+<a class="text-primary dark:text-primary-container font-bold hover:underline" href="https://www.google.com/maps/place/LOTUS+Mehmonxonasi/@40.109227,67.8128126,13z" target="_blank">Yo'nalishni ko'rish →</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-black w-full py-20 px-8 border-t border-stone-200 dark:border-stone-900 transition-colors duration-500">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-serif text-2xl text-stone-800 dark:text-primary-container mb-8 tracking-widest uppercase">LOTUS</div>
+<p class="text-stone-500 dark:text-stone-400 font-sans text-sm tracking-wide leading-relaxed">
+                    Hashamatli dam olish va premium xizmatlarning oliy ko'rinishi. Biz har bir mehmonimizni qadrlaymiz.
+                </p>
+</div>
+<div>
+<h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-8 uppercase text-xs tracking-[0.2em]">Bo'limlar</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#xonalar">Xonalar</a></li>
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#restoran">Restoran</a></li>
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#spa">SPA markazi</a></li>
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#galereya">Galereya</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-8 uppercase text-xs tracking-[0.2em]">Foydali</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#">Maxfiylik siyosati</a></li>
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#">Foydalanish shartlari</a></li>
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#">Aloqa</a></li>
+<li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors text-sm font-sans tracking-wide" href="#">Manzil</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-8 uppercase text-xs tracking-[0.2em]">Bog'lanish</h4>
+<ul class="space-y-4 text-stone-500 dark:text-stone-400 text-sm font-sans tracking-wide">
+<li class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-sm">phone</span>
+<span>+998 90 123 45 67</span>
+</li>
+<li class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>info@lotus-hotel.uz</span>
+</li>
+<li class="pt-4 flex space-x-4">
+<a class="w-10 h-10 rounded-full border border-stone-200 dark:border-stone-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">social_leaderboard</span></a>
+<a class="w-10 h-10 rounded-full border border-stone-200 dark:border-stone-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-20 mt-20 border-t border-stone-200 dark:border-stone-900 text-center">
+<p class="text-stone-400 dark:text-stone-500 font-sans text-xs tracking-widest uppercase">© 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.</p>
+</div>
+</footer>
+<button class="fixed bottom-10 right-10 w-14 h-14 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500 z-50 hover:scale-110 active:scale-95" id="backToTop">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const hoverElements = document.querySelectorAll('a, button, input, select, .group');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        // High Performance Scroll Animations (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we can stop observing if we want it to stay
+                    // revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Parallax Effect for Hero
+        const heroParallax = document.getElementById('hero-parallax');
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.pageYOffset;
+            if (scrollPos <= window.innerHeight) {
+                heroParallax.style.transform = `translateY(${scrollPos * 0.4}px)`;
+            }
+            
+            // Sticky Navbar & Back to Top visibility
+            const nav = document.querySelector('nav');
+            const backToTop = document.getElementById('backToTop');
+            if (scrollPos > 100) {
+                nav.classList.add('py-4', 'shadow-2xl');
+                nav.classList.remove('py-6');
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                nav.classList.remove('py-4', 'shadow-2xl');
+                nav.classList.add('py-6');
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Back to top
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Testimonial Carousel Simple Mockup
+        const testimonials = [
+            { text: '"Bu hayotimdagi eng yaxshi dam olish bo\'ldi. Xizmat ko\'rsatish darajasi hayratlanarli, xonalar esa juda shinam."', author: "Jasur Jumaboyev", role: "Biznesmen" },
+            { text: '"Taomlar ajoyib, SPA markazi esa haqiqiy jannat. Albatta yana qaytib kelaman."', author: "Malika Solihova", role: "Sayohatchi" },
+            { text: '"Lotus mehmonxonasi - bu haqiqiy 5 yulduzli tajriba. Har bir detalga e\'tibor berilgan."', author: "Otabek G\'ulomov", role: "Arxitektor" }
+        ];
+        let currentTestimonial = 0;
+        const container = document.getElementById('testimonial-container');
+
+        setInterval(() => {
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                container.querySelector('p').innerText = testimonials[currentTestimonial].text;
+                container.querySelector('.font-bold').innerText = testimonials[currentTestimonial].author;
+                container.querySelector('.text-sm').innerText = testimonials[currentTestimonial].role;
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 700);
+        }, 5000);
+
+        // Form Submission Success Simulation
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "Yuborilmoqda...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = "Muvaffaqiyatli!";
+                btn.classList.remove('from-primary', 'to-primary-container');
+                btn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.add('from-primary', 'to-primary-container');
+                    btn.classList.remove('bg-green-500');
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body></html>

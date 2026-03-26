@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#5d4201",
+              "primary-container": "#c5a059",
+              "on-surface": "#1b1c1c",
+              "outline-variant": "#d1c5b4",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e4e2e1",
+              "on-background": "#1b1c1c",
+              "secondary-container": "#e2dfde",
+              "on-secondary-fixed": "#1c1b1b",
+              "on-secondary-container": "#636262",
+              "surface-variant": "#e4e2e1",
+              "tertiary-fixed": "#e4e2de",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#a6a5a2",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c8c6c3",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#474744",
+              "error": "#ba1a1a",
+              "surface-tint": "#775a19",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#261900",
+              "on-tertiary-container": "#3b3b39",
+              "tertiary": "#5e5e5c",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fcf9f8",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-primary-container": "#4e3700",
+              "on-tertiary-fixed": "#1b1c1a",
+              "on-error": "#ffffff",
+              "primary-fixed": "#ffdea5",
+              "outline": "#7f7667",
+              "secondary": "#5f5e5e",
+              "inverse-primary": "#e9c176",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae7e7",
+              "primary": "#775a19",
+              "surface-container": "#f0eded",
+              "background": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "on-surface-variant": "#4e4639",
+              "secondary-fixed": "#e5e2e1",
+              "on-secondary-fixed-variant": "#474746",
+              "inverse-surface": "#303030",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9), transform 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+        }
+        .masonry-item.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-b border-stone-200/20 shadow-sm">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif font-bold tracking-tighter text-amber-800 dark:text-amber-500">LOTUS</div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Xonalar</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Restoran</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">SPA</a>
+<a class="font-serif tracking-tight text-lg text-amber-800 dark:text-amber-400 border-b-2 border-amber-800 dark:border-amber-400 pb-1" href="#">Galereya</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Biz haqimizda</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="dark_mode">dark_mode</button>
+<button class="bg-primary hover:opacity-80 transition-opacity duration-300 text-on-primary px-6 py-2 rounded-xl font-medium tracking-wide shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                Band qilish
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Header -->
+<header class="max-w-7xl mx-auto px-8 mb-20 text-center">
+<span class="text-primary font-serif italic text-lg mb-4 block tracking-widest uppercase">Tasvirlarda Lotus</span>
+<h1 class="font-headline text-5xl md:text-7xl text-on-surface tracking-tight leading-tight mb-8">
+            Galereya — Bizning <br/> <span class="italic text-primary">Dunyomizga sayohat</span>
+</h1>
+<div class="h-px w-24 bg-outline-variant/30 mx-auto"></div>
+</header>
+<!-- Category Filter -->
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<div class="flex flex-wrap justify-center gap-4 md:gap-12 border-b border-outline-variant/10 pb-6">
+<button class="font-label text-sm uppercase tracking-[0.2em] text-primary border-b-2 border-primary pb-2 font-semibold">Barchasi</button>
+<button class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors pb-2">Xonalar</button>
+<button class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors pb-2">Restoran</button>
+<button class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors pb-2">SPA</button>
+<button class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors pb-2">Hudud</button>
+</div>
+</section>
+<!-- Immersive Grid Content -->
+<section class="max-w-[1400px] mx-auto px-8">
+<div class="masonry-grid" id="gallery-grid">
+<!-- Item 1: Interior -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury hotel suite bedroom with warm morning light, premium beige linens and minimalist wooden furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2fq_dQE_yTYPcHhm5OYl_ol0mNWT2qwb88ttgseeMw3z4qiV0K6MV3EMm8HOS8LTaXVlNPURS2O_aNBt_h-lcZmh2QXKoLLdDg2YhMDQu084b3KeE476RDDMAtEDRFbkvm5wG4zRC18jWxnttUkJTeSdefZ80x2F0F64uomtga7Dqatw4XAUquKi9jqs-ZKElxSLBxRNMFCGOsCo7iDGhDMwBdrG-FJTCwZzB9sJXlQQ9jzxVWUIs81QbtGFXhh_O6hqC4z8OJrk"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 2: Pool (Vertical) -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="vertical shot of crystal clear hotel infinity pool reflecting the golden sunset sky and tropical palm trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ou8IVgcglcKMvX8ya5a50d4gcrLb-ovCXzresCNxFsI4Cvwy8ENWGUAJxpNsDLNhgrUCx3uCDizBu6oTAsk-p-u_7qUWsyP_p--Li-UpWZkN3Ti4DPnQZl3sJnCZseUYSkVYSLUxG5WpH9lQtZgqqV_w_an9CJ2I1-bqD0tTL_PeaWrAIdMtZlwgp3_e1FjAWdURcZSwHdRUypCzlRem-UWaJo6Ei9xhpR623JT9akrdCQeVgxKyKfXASJbrorchYh9rLqsX2zY"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 3: Spa -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="tranquil luxury spa room with massage tables, soft candlelight, and warm earth tones for relaxation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzYPDf2Q5aPVmnIZU0ZF83Si_by3U-j-gyKlR-AJGCOLOgKQR8AStrpk2XNDZA3ILe3DnM_UrQXcWJFHpHlkdgQBN_W4htYYvQEK593K0dHA-8aeyHY7C9SXs9TTm-b9_ncfebn7lI9h3cSMgnb1JqHKgd5bl988YOLL5bAFa3waqwEasHUS6wiU8FSg0nwcGjQHEr5_jsNsVCZGW0w8lz5k9lh3qcQ6KPzDM_pzv-rzj3v7yCbOhvqCw-Uk6eg5fqOGO74WNlFRk"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 4: Restaurant -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="upscale fine dining restaurant interior with elegant white tablecloths and warm ambient lighting at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZBX6u91b_1OENDflt_ImRnS3zEbvSu2-iLujOGRAEXJdi_08E4ctvthl2RkFetDSuJ6iHrqSELjw-Dpv7sSWbAj_ZisH57e6UB9PWDV9J-Rc-43YDnAL2YPUydlkMKTr2O2R7gnPhOq0TROv11Q2evYHRKLqRRfuIZ7KiAgynZ9C5jGRf_lRQLj1IH4cMMo0zcOYuUPVcdrXvGvRm5EJXJfKBamRQnIsX2sDLQohRJg0w1vjpd9Ww1iZD24oaTvs7RVCp7jl-sHA"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 5: Detail/Minimalism -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist close-up of a lotus flower in a stone water bowl at a hotel entrance sanctuary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuKNHYbDgvREfdb8lD3iR1JwfekMOgdXqfaBK0q3k7gJECQgk9cbyWKsEdyaJSLg3u50Uy7GjfzF34KitXeC-Zju_14ntCGfn7XAx7uaM1ip82wwVHbKy8TzKw5FLxtousgUoukSVh4hp3FiN6dH8nhdF2GySlFAHD0pOXITjfmgmQdgj5X7Md5jfF1tDElwcYWS1eDUhVhKNY-dkFECSCbJfTaaRww6HFPU9QSvbtf1T1ibV-JyTN7yrcWmm7d6JzrCXbb73Bm9A"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 6: Exterior -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="stunning architectural exterior of a modern luxury hotel with symmetrical design and lush landscaping at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaAC8I5LLFQ1jpnG0-ksauSC_g-5xPy_mJXtgxcxuqRuqQNcC21utaLezvyD3RadTLY5k84aeMDn8_T6pNA75UoaDuiwH4gudZ0JbfMN8sX7yFSVfMdSwWKWaxX6eubXkoP1mLoqxpCbbdOcBfdh_NCQE0Ad8E0VS2bdKmbROO_SrPBLXDerv2b_ZXxdE6JHz-bNRQECWBfJd3-BOewrXxchryDKvTi1lXdPoXFVssl6pg8MB0JUJhsBkzCAPaQ_Agj7PHhZ-Wq-M"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 7: Suite Lounge -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="spacious hotel suite lounge with velvet sofas, large windows showing a city view, and gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfAALarBt5P90W5u-clQvbXOMhP2sOSdFPn2u1Mw9drBt0zzLaJMEYwXiAXC8uBHZCpTBvqTmrs_zuE2lqYBBM6GSG9rsxo07p5p-eQltD9EcFngI4VEr8AUhx5kY7fA-c8p8_IftJjpNhmpD9O83ah_M3Jb5p6W1VLuX6guhTQfoVELT5xzfcrNpHfYkk5ksW0qLlOcycXaoDkmGtsLtcgd3E1-iqBsaPfrz9gLfbdL1zJ2YEdYyN34fQAJcq19y7UUS9vlUrNIE"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 8: Bath area -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="modern luxury bathroom with white marble floors, freestanding tub and premium organic bath products" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrOMTADCQE5B8M_j4KIUAc29WpJYq6NqqTmfmRkjmcp_jL_947BZht18zZH9Nkg3YZyNstXnOl0CFhKxFa7BevwI6lZFJ2a5UTbIEtFgQj1EPPp4lg5kUn1HMsCo-u5UOU2-hic2biKdITNHe-q9NccldaCifxAqx2oP3R76MObXudO4CjqwbWa9kzhQQYPatA-NvTJaODM590mUjwh_L-ylJ9ukGw9oB2LM8KdIOK1JEwQarBedw1n4AI51eWkjtl5cjs28_5H0o"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<!-- Item 9: Night terrace -->
+<div class="masonry-item group cursor-pointer relative overflow-hidden rounded-xl">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="atmospheric outdoor hotel terrace at night with soft warm lanterns and comfortable seating areas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmkOSwOroIROs5GKURRtBdiHoBuZVlT1nJ-pbQ2W2cxDgwMWBuEHV2l8-kpJ3xQjDwxqqhv1latfoGce6WsS3YoWgkqdXLlcLxU5k0T0qz0j5d3ZcIOCJAkjwhaqJDhWiNfITHz4lNN6_29iqCyfbhvHmwF77Lk9AXi8NVNEfqEhp-yJycxpT_t2-GrtJ3EZtz_faqOCSZb1fGvo3FX8sUSWsogp3vWsoX6hTKZLVqBqxvEkB_m_2iGpJhm_KQrnyfwbYvyYF6nnM"/>
+<div class="absolute inset-0 bg-on-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 bg-surface-container-low py-24 px-8 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl text-on-surface mb-6">O'z oromingizni hoziroq bron qiling</h2>
+<p class="font-body text-secondary mb-10 leading-relaxed">
+                Lotus mehmonxonasi sizga unutilmas dam olish lahzalarini va 5 yulduzli xizmat ko'rsatish darajasini va'da qiladi.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-medium tracking-wide shadow-xl shadow-primary/20 hover:opacity-90 transition-all">
+                    Xonalarni ko'rish
+                </button>
+<button class="bg-white border border-outline-variant/30 text-on-surface px-10 py-4 rounded-xl font-medium tracking-wide hover:bg-surface-container-high transition-all">
+                    Bog'lanish
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-stone-950 w-full py-20 px-12 border-t border-stone-200 dark:border-stone-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto items-start text-center md:text-left">
+<div class="space-y-6">
+<div class="text-xl font-serif italic text-amber-900 dark:text-amber-400">LOTUS</div>
+<p class="font-serif text-sm text-stone-500 lowercase tracking-wide normal-case">
+                Sizning sharqona oromingiz va zamonaviy qulaylik uchrashadigan manzil.
+            </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500">Bo'limlar</h4>
+<nav class="flex flex-col space-y-3">
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Asosiy</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Xonalar</a>
+<a class="font-serif text-sm uppercase tracking-widest text-amber-700 dark:text-amber-500 font-bold" href="#">Galereya</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Aloqa</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500">Ma'lumot</h4>
+<nav class="flex flex-col space-y-3">
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Maxfiylik siyosati</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Foydalanish shartlari</a>
+<a class="font-serif text-sm uppercase tracking-widest text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Manzil</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500">Ijtimoiy tarmoqlar</h4>
+<div class="flex justify-center md:justify-start space-x-6">
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="camera_alt">camera_alt</span>
+</a>
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-stone-200 dark:border-stone-900 text-center">
+<p class="font-serif text-xs uppercase tracking-widest text-stone-500">
+            © 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.
+        </p>
+</div>
+</footer>
+<!-- Lightbox Mockup -->
+<div class="fixed inset-0 z-[100] bg-on-surface/95 hidden items-center justify-center p-8" id="lightbox">
+<button class="absolute top-8 right-8 text-white" id="close-lightbox">
+<span class="material-symbols-outlined text-4xl" data-icon="close">close</span>
+</button>
+<img alt="" class="max-w-full max-h-[870px] object-contain shadow-2xl" id="lightbox-img" src=""/>
+<div class="absolute bottom-12 text-center">
+<p class="text-white font-serif tracking-widest uppercase" id="lightbox-caption"></p>
+</div>
+</div>
+<script>
+    // Scroll Reveal Logic
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add a small stagger delay based on its appearance in the viewport if needed, 
+                // but basic reveal is often cleaner for masonry
+                entry.target.classList.add('reveal');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.masonry-item').forEach((item) => {
+        revealObserver.observe(item);
+    });
+
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('close-lightbox');
+
+    document.querySelectorAll('.masonry-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.dataset.alt || '';
+            // Example caption mapping
+            const altText = img.dataset.alt.toLowerCase();
+            let category = "Galereya";
+            if (altText.includes('bedroom') || altText.includes('suite')) category = "Xonalar";
+            if (altText.includes('pool')) category = "Hudud";
+            if (altText.includes('spa')) category = "SPA";
+            if (altText.includes('restaurant') || altText.includes('dining')) category = "Restoran";
+            
+            lightboxCaption.textContent = category;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+</script>
+</body></html>

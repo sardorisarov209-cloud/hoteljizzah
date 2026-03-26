@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="uz">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LOTUS Restorani | Gastronomik San'at</title>
+<meta name="description" content="LOTUS Restorani — milliy va Yevropa taomlarining uyg'unligi."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#c5a059","on-surface":"#1b1c1c","outline-variant":"#d1c5b4","surface-container-low":"#f6f3f2","on-surface-variant":"#4e4639","surface":"#fcf9f8","background":"#fcf9f8","primary":"#775a19","on-primary":"#ffffff","secondary":"#5f5e5e"},fontFamily:{"headline":["Noto Serif"],"body":["Inter"],"label":["Inter"]},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"}}}}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+  body{cursor:none;overflow-x:hidden}
+  #cc{width:20px;height:20px;background:rgba(119,90,25,.3);border:1px solid #775a19;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .15s ease-out}
+  .ch{transform:scale(3)!important}
+  .glass{background:rgba(255,255,255,.75);backdrop-filter:blur(20px);border:1px solid rgba(209,197,180,.2)}
+  .dark .glass{background:rgba(18,18,18,.75);border-color:rgba(197,160,89,.15)}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+  .reveal.active{opacity:1;transform:translateY(0)}
+  .dark ::-webkit-scrollbar{width:10px;background:#0a0a0a}
+  .dark ::-webkit-scrollbar-thumb{background:#775a19;border-radius:5px}
+</style>
+<script>
+  if(localStorage.getItem('theme')==='dark'||(!('theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}
+</script>
+</head>
+<body class="bg-surface dark:bg-[#0a0a0a] font-body text-on-surface dark:text-stone-300 transition-colors duration-500">
+<div id="cc"></div>
+
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200/20 dark:border-stone-800/50 transition-all duration-500" id="nav">
+  <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+    <a class="text-2xl font-serif uppercase tracking-[0.2em] text-amber-800 dark:text-primary-container" href="index.html">LOTUS</a>
+    <div class="hidden md:flex items-center space-x-10">
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="index.html#xonalar">Xonalar</a>
+      <a class="text-amber-800 dark:text-primary-container border-b border-amber-700 pb-0.5 font-serif italic" href="restoran.html">Restoran</a>
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="spa.html">SPA</a>
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="galereya.html">Galereya</a>
+      <a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-primary-container transition-colors font-serif italic" href="about.html">Biz haqimizda</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" id="tt">
+        <span class="material-symbols-outlined hidden dark:block text-primary-container">light_mode</span>
+        <span class="material-symbols-outlined block dark:hidden text-stone-600">dark_mode</span>
+      </button>
+      <a class="bg-gradient-to-r from-primary to-primary-container text-white px-7 py-2.5 rounded-xl font-serif italic hover:scale-105 transition-transform shadow-lg" href="#reservation">Band qilish</a>
+    </div>
+  </div>
+</nav>
+
+<header class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover scale-110" id="hero-p" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjg7sB_6y9iS1yDkFWKl2ztOddK-hqkRsQzauWuQUS-4BE3Kn_S-PMUJ3K4335ytiQkeLMjgTcQjAD6RjQUkMj7kpEazG-lM9qAmTAGHIgOqW4Bksg4xjdUAYAl81TySVrB1E7Lrd82etwJR_quC2CYZmLBjA36ZnPTXLFToIw90HbWx-vE_Qm3fTe6AmSX3Z8U66tVlENf7NqcIbuCjlREm8d0cQmeltgevy-XK3OEHZ1ndBRFnBpmsEwF4Q8wJviI5Kjm27RFHc" alt="Luxury restaurant"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/75"></div>
+  </div>
+  <div class="relative z-10 text-center px-6 max-w-4xl reveal active">
+    <span class="text-amber-300 uppercase tracking-[0.4em] text-sm mb-6 block">Gastronomik San'at Markazi</span>
+    <h1 class="text-white font-headline text-5xl md:text-7xl mb-8 leading-tight">LOTUS Restorani</h1>
+    <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Har bir luqmada an'analar va zamonaviy ijodning uyg'unligini his eting.</p>
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <a class="bg-gradient-to-r from-primary to-primary-container text-white px-10 py-4 rounded-xl font-medium hover:scale-105 transition-all shadow-xl" href="#reservation">Stol band qilish</a>
+      <a class="glass border border-white/20 text-white px-10 py-4 rounded-xl font-medium hover:bg-white/10 transition-all" href="#menu">Menyuni ko'rish</a>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"><span class="material-symbols-outlined text-white text-4xl">expand_more</span></div>
+</header>
+
+<!-- Chef's Special -->
+<section class="py-28 px-6 bg-surface dark:bg-[#0a0a0a] transition-colors duration-500">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="mb-16 text-center reveal">
+      <h2 class="text-primary dark:text-primary-container font-headline text-4xl md:text-5xl mb-4 italic">Chef's Special</h2>
+      <p class="text-on-surface-variant dark:text-stone-400 max-w-xl mx-auto">Bosh oshpazimiz tomonidan maxsus tanlab olingan mavsumiy durdonalar.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+      <div class="md:col-span-7 relative group overflow-hidden rounded-full min-h-[500px] reveal">
+        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCqTsnvJIc4jtfb5wnmDDFGIN7WNcmKkV7oGF7Hf7M-aUVTqnUnSAvZeHu5bcCdHlZHmkokDW3H_vsJk0OzXty8wM0Dgn4Zj6Noar5XXyW1NCo9JC3RiF5NNiUkRWtzLUp7GN9-4AJdS5jV1MhXqNY4vMMD8ql5i_ExHZ7GpGDH0-j15F8dfgEFkVaeS-MtWgu5VPg1Siqjxa7O6Fk4Xjakp6Ipk9Lp4CYi6A7AkWuP6t0MA-Q3t-bzQpxS1xMKrgEhq8CH4Hhl00" alt="Wagyu Steak"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70"></div>
+        <div class="absolute bottom-16 left-16 text-white max-w-xs">
+          <span class="text-primary-container uppercase text-xs tracking-widest">Afsonaviy Ta'm</span>
+          <h3 class="text-3xl font-headline mt-2">Premium Wagyu Steak</h3>
+          <p class="mt-3 text-white/80 text-sm leading-relaxed">Olovda pishirilgan, og'izda eriydigan go'sht.</p>
+        </div>
+      </div>
+      <div class="md:col-span-5 grid grid-rows-2 gap-8">
+        <div class="bg-stone-100 dark:bg-stone-900 p-10 rounded-xl flex flex-col justify-center border border-outline-variant/10 dark:border-stone-800 reveal" style="transition-delay:200ms">
+          <span class="text-primary dark:text-primary-container font-serif text-2xl mb-3 italic">Osh — Sulton Taom</span>
+          <p class="text-on-surface-variant dark:text-stone-400 leading-relaxed text-sm">An'anaviy usulda, o'tin alangasida pishirilgan to'y oshi. Devzira guruchi va tanlangan qo'y go'shti.</p>
+          <div class="mt-6 flex items-center text-primary dark:text-primary-container font-medium gap-2 cursor-pointer group text-sm">
+            <span>Batafsil</span><span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+          </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-xl reveal" style="transition-delay:400ms">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVkYhhF0KwXnMkGBZc7UsQXu_mKNsxiNy5TYq0gAN1Xuy-fjfqkCkLoxyokD8-cLe5TPBUS_jbPq8zh4v5UyyGILh40pINtuc_Xy4NH5XjiHCFpM9wkf5Hr1TA8675dbR6peWtnFkViihXZvnVJfVsxv-2rTDq5NX_CVyrD6THq2HUWPNWlHdBPv_pYRt9f8ptmVT1UNabGeSu2Z8f8IoNDrZT5JXO4SJgvZ5LbQU3BjYMnJwxZEDwHWvOFWtIirb8id5HSoyWSVU" alt="Dengiz Ne'matlari"/>
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+          <div class="absolute top-8 left-8"><h4 class="text-white font-headline text-2xl">Dengiz Ne'matlari</h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="py-24 bg-stone-100 dark:bg-[#121212] transition-colors duration-500" id="menu">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal">
+      <div>
+        <h2 class="text-on-surface dark:text-stone-100 font-headline text-4xl md:text-5xl mb-3">Bizning Menyu</h2>
+        <p class="text-on-surface-variant dark:text-stone-400">Har bir taomda sifat va nafosat.</p>
+      </div>
+      <div class="flex gap-3">
+        <button class="px-5 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all text-sm">Hammasi</button>
+        <button class="px-5 py-2 rounded-full border border-outline-variant dark:border-stone-700 text-on-surface-variant dark:text-stone-400 hover:border-primary transition-all text-sm">Milliy</button>
+        <button class="px-5 py-2 rounded-full border border-outline-variant dark:border-stone-700 text-on-surface-variant dark:text-stone-400 hover:border-primary transition-all text-sm">Yevropa</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="group bg-surface dark:bg-stone-900 p-4 rounded-xl hover:shadow-2xl hover:shadow-primary/5 transition-all reveal">
+        <div class="overflow-hidden rounded-xl h-60 mb-5"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTpaHWMzu32Ac4GeCjwRSBR4XyXh-qEuM2Z-PAELupjAVsnmZA0x9RV8hUwzSmQUO1xeqYMq_91RuZDCQeIcxxuRPPqRcgy4fHStCW6sdcOwOAsZTGFi89bVZq6Db2c_xhpXzH9ThFC1hUrlCyV6tv0wKjxe4M5pHJnkqqQEc8qeMcYpVmJqVg2Ks-r2DpABnUnw02hP8sp1VnRFLGXXnlgzMQf6rl2ab4W3L1R96YXlV6cCHvX5m8uLO4s2QBrVjKTG6aECbKqKI" alt="Zarafshon Oshi"/></div>
+        <div class="px-2"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl text-on-surface dark:text-stone-100">Zarafshon Oshi</h3><span class="text-primary dark:text-primary-container font-medium text-sm">85,000 UZS</span></div><p class="text-sm text-on-surface-variant dark:text-stone-400 leading-relaxed">Lazzatli qo'y go'shti, sarg'ish sabzi va maxsus ziravorlar bilan tayyorlangan milliy taom.</p></div>
+      </div>
+      <div class="group bg-surface dark:bg-stone-900 p-4 rounded-xl hover:shadow-2xl hover:shadow-primary/5 transition-all reveal" style="transition-delay:150ms">
+        <div class="overflow-hidden rounded-xl h-60 mb-5"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1S068pS64kAlO2dYc4AYBZ8GH-2NDy7LeuxAikARiC8Bw-bFFdfuPPE7J1EifFf1MnXYKoydYba9wHF-D5VTR_C1hINIwD6M23qzbo8fqIyo8Qyj9KkXwvcGlHDqU7v5mWcDiuR58sq0FKAu3CKgKL9DHXihFQ8ydTRJLzJ4l-6wblH8GGygzdZju10X1wDhDyj8UOWZAgZh-VYFjYMgjmcpCRl5sozRrLI-KLA_0Hg5NpI2SIRcnXghnuskqrt0zxcWxyY_H_yo" alt="Nordik Salmon"/></div>
+        <div class="px-2"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl text-on-surface dark:text-stone-100">Nordik Salmon</h3><span class="text-primary dark:text-primary-container font-medium text-sm">145,000 UZS</span></div><p class="text-sm text-on-surface-variant dark:text-stone-400 leading-relaxed">Grilda pishirilgan yangi salmon balig'i, limonli qayla va ismaloq garniri bilan.</p></div>
+      </div>
+      <div class="group bg-surface dark:bg-stone-900 p-4 rounded-xl hover:shadow-2xl hover:shadow-primary/5 transition-all reveal" style="transition-delay:300ms">
+        <div class="overflow-hidden rounded-xl h-60 mb-5"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGvOKYXZ1ILneR6qwyTnSGL50WbEX3Kg9hcdf1ASDyN7Oe28qEz-fZuJWL1zPIfKQ9yj7-IoG9kZTPscTDuwBTt7hm0tKsznAh4PGmOrRxzEkcKrZjFe5NEFljd_hq-kShLjwegti1Ir2V3DROwr408m5pBW9qZzJD-2OWP4jZBa-CDPKuAS2epaDylwVcxeiLbLZZxJH5I8mcboOqtocP0jc-dRl3PrdPWi2XXXC_03kV-Gsv8ON_sIAA-N4rserEFu855V0aViA" alt="Truffle Risotto"/></div>
+        <div class="px-2"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl text-on-surface dark:text-stone-100">Truffle Risotto</h3><span class="text-primary dark:text-primary-container font-medium text-sm">110,000 UZS</span></div><p class="text-sm text-on-surface-variant dark:text-stone-400 leading-relaxed">Qora truffle va Parmezan pishlog'i bilan boyitilgan guruchli taom.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reservation -->
+<section class="py-32 relative overflow-hidden" id="reservation">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover scale-110" id="res-p" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7M4xbSConkHVZooARF429NLcdNcJO4-THKyj5-uGvIdVmE1h52fRTIiBygRblJn7wdoPBNR5v1K6CK8-f2unfvv0S_YE21G8f_9zMHmBRLmXs-hTg9h2xYUy9HqEv6-6NtN2on2WdQgGHO5qT8GsazunOhasfgn1vPhTvoDWsaRdQkVmYrrEfo6UGuHYvv-J2_BsOGWXzKqQ3kH8OaLmGmxHjGhEjNaGEHnHyJojDBBnMNKjXUv4P6u2po8EVEa9GstHRcVs07b8" alt="Restaurant background"/>
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 reveal">
+    <div class="glass p-10 md:p-14 rounded-2xl shadow-2xl">
+      <div class="text-center mb-10">
+        <h2 class="text-on-surface dark:text-stone-100 font-headline text-4xl mb-3">Stol band qilish</h2>
+        <p class="text-on-surface-variant dark:text-stone-400">Maxsus kechangizni biz bilan rejalashtiring.</p>
+      </div>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-8" id="rf">
+        <div><label class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-stone-400 block mb-2">Ismingiz</label><input class="w-full bg-transparent border-b border-outline-variant/40 dark:border-stone-700 py-3 focus:outline-none focus:border-primary transition-colors dark:text-white" placeholder="Ismingizni kiriting" type="text"/></div>
+        <div><label class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-stone-400 block mb-2">Telefon</label><input class="w-full bg-transparent border-b border-outline-variant/40 dark:border-stone-700 py-3 focus:outline-none focus:border-primary transition-colors dark:text-white" placeholder="+998 90 123 45 67" type="tel"/></div>
+        <div><label class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-stone-400 block mb-2">Sana</label><input class="w-full bg-transparent border-b border-outline-variant/40 dark:border-stone-700 py-3 focus:outline-none focus:border-primary transition-colors dark:text-white [color-scheme:light] dark:[color-scheme:dark]" type="date"/></div>
+        <div><label class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-stone-400 block mb-2">Mehmonlar soni</label><select class="w-full bg-transparent border-b border-outline-variant/40 dark:border-stone-700 py-3 focus:outline-none focus:border-primary transition-colors dark:text-stone-300"><option>2 kishi</option><option>4 kishi</option><option>6+ kishi</option></select></div>
+        <div class="md:col-span-2 mt-6"><button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1" type="submit">Tasdiqlash</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-stone-50 dark:bg-black w-full py-16 px-8 border-t border-stone-200 dark:border-stone-900 transition-colors duration-500">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <div class="col-span-2 md:col-span-1"><div class="font-serif text-xl text-stone-800 dark:text-primary-container mb-6 tracking-widest uppercase">LOTUS</div><p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">Hashamatli dam olish va premium xizmatlarning oliy ko'rinishi.</p></div>
+    <div><h4 class="font-semibold text-stone-700 dark:text-stone-300 mb-6 text-xs uppercase tracking-[0.2em]">Sahifalar</h4><ul class="space-y-3 text-sm"><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="index.html">Bosh sahifa</a></li><li><a class="text-amber-700 dark:text-primary-container font-semibold" href="restoran.html">Restoran</a></li><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="spa.html">SPA</a></li><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="galereya.html">Galereya</a></li><li><a class="text-stone-500 hover:text-amber-600 dark:hover:text-primary-container transition-colors" href="about.html">Biz haqimizda</a></li></ul></div>
+    <div><h4 class="font-semibold text-stone-700 dark:text-stone-300 mb-6 text-xs uppercase tracking-[0.2em]">Bog'lanish</h4><ul class="space-y-3 text-stone-500 dark:text-stone-400 text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span>+998 90 123 45 67</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span>info@lotus-hotel.uz</li></ul></div>
+    <div><h4 class="font-semibold text-stone-700 dark:text-stone-300 mb-6 text-xs uppercase tracking-[0.2em]">Manzil</h4><p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">Jizzax shahri, Sh. Rashidov ko'chasi, 45-uy.</p><a class="text-primary dark:text-primary-container text-sm font-semibold hover:underline mt-3 block" href="https://www.google.com/maps/place/LOTUS+Mehmonxonasi/@40.109227,67.8128126" target="_blank">Xaritada ko'rish →</a></div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-stone-200 dark:border-stone-900 text-center"><p class="text-stone-400 dark:text-stone-500 text-xs tracking-widest uppercase">© 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.</p></div>
+</footer>
+
+<script>
+  document.getElementById('tt').addEventListener('click',()=>{
+    const isDark=document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme',isDark?'dark':'light');
+  });
+  const cc=document.getElementById('cc');
+  document.addEventListener('mousemove',e=>{cc.style.left=e.clientX+'px';cc.style.top=e.clientY+'px'});
+  document.querySelectorAll('a,button,input,select,.group').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cc.classList.add('ch'));
+    el.addEventListener('mouseleave',()=>cc.classList.remove('ch'));
+  });
+  window.addEventListener('scroll',()=>{
+    const y=window.pageYOffset;
+    const hp=document.getElementById('hero-p');
+    if(hp)hp.style.transform=`scale(1.1) translateY(${y*.3}px)`;
+    const rp=document.getElementById('res-p');
+    const rs=document.getElementById('reservation');
+    if(rp&&rs){const off=y-rs.offsetTop;rp.style.transform=`scale(1.1) translateY(${off*.2}px)`;}
+    const nav=document.getElementById('nav');
+    if(y>100){nav.classList.add('py-4','shadow-xl');nav.classList.remove('py-6');}
+    else{nav.classList.remove('py-4','shadow-xl');nav.classList.add('py-6');}
+  });
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')}),{threshold:.15,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.getElementById('rf').addEventListener('submit',e=>{
+    e.preventDefault();const btn=e.target.querySelector('button');btn.textContent='Yuborilmoqda...';btn.disabled=true;
+    setTimeout(()=>{btn.textContent='Muvaffaqiyatli ✓';btn.style.background='#22c55e';
+    setTimeout(()=>{btn.textContent='Tasdiqlash';btn.style.background='';btn.disabled=false;e.target.reset();},3000);},1500);
+  });
+</script>
+</body>
+</html>

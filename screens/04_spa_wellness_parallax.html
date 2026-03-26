@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#e5e2e1",
+              "tertiary-fixed-dim": "#c8c6c3",
+              "primary-container": "#c5a059",
+              "on-tertiary-container": "#3b3b39",
+              "surface-bright": "#fcf9f8",
+              "on-surface": "#1b1c1c",
+              "on-secondary-container": "#636262",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#474744",
+              "surface-container-low": "#f6f3f2",
+              "surface-variant": "#e4e2e1",
+              "primary-fixed": "#ffdea5",
+              "outline": "#7f7667",
+              "inverse-on-surface": "#f3f0ef",
+              "inverse-surface": "#303030",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#5d4201",
+              "outline-variant": "#d1c5b4",
+              "on-primary-fixed": "#261900",
+              "on-tertiary-fixed": "#1b1c1a",
+              "on-secondary-fixed": "#1c1b1b",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#4e4639",
+              "tertiary-fixed": "#e4e2de",
+              "surface-dim": "#dcd9d9",
+              "inverse-primary": "#e9c176",
+              "primary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae7e7",
+              "surface-tint": "#775a19",
+              "surface-container-highest": "#e4e2e1",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary": "#775a19",
+              "on-primary-container": "#4e3700",
+              "background": "#fcf9f8",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c1c",
+              "surface": "#fcf9f8",
+              "on-secondary-fixed-variant": "#474746",
+              "tertiary-container": "#a6a5a2",
+              "on-primary": "#ffffff",
+              "surface-container": "#f0eded",
+              "tertiary": "#5e5e5c",
+              "secondary-container": "#e2dfde",
+              "secondary": "#5f5e5e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .dark .glass-card {
+        background: rgba(27, 28, 28, 0.7);
+      }
+      .hero-gradient {
+        background: linear-gradient(to bottom, rgba(252, 249, 248, 0) 0%, #fcf9f8 100%);
+      }
+      .gold-gradient-btn {
+        background: linear-gradient(135deg, #775a19 0%, #c5a059 100%);
+      }
+
+      /* Parallax & Reveal Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .parallax-img {
+        will-change: transform;
+        transform: scale(1.1);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200/40 dark:border-stone-800/40 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-12 py-6 max-w-full mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-amber-800 dark:text-amber-400 font-headline uppercase">LOTUS</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-500 transition-colors font-label text-sm tracking-wide" href="#">Xonalar</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-500 transition-colors font-label text-sm tracking-wide" href="#">Restoran</a>
+<a class="text-amber-800 dark:text-amber-400 border-b-2 border-amber-600 font-semibold font-label text-sm tracking-wide" href="#">SPA</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-500 transition-colors font-label text-sm tracking-wide" href="#">Galereya</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-500 transition-colors font-label text-sm tracking-wide" href="#">Biz haqimizda</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-500 transition-colors font-label text-sm tracking-wide" href="#">Aloqa</a>
+</div>
+<button class="gold-gradient-btn text-white px-8 py-2.5 rounded-full font-label font-medium tracking-wide shadow-lg shadow-primary/20 hover:scale-105 transition-transform active:scale-95">
+                Band qilish
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden" id="hero">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover parallax-img" data-alt="luxury spa treatment room with warm ambient lighting wooden textures and a massage table with orchids" id="hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH_I-smrHkI_iXbDenePZ3yKj3y_MDKAt9HQJFfNAHH6xP2obb3FHzCp1aTLPL9AIW8Fc_oXIustH7QT4wTavIMskmqpbBAyBGJ77x5llGpf5rvoQqJ7czUbdmIhSgHXUyWUE7oLmGFEz2kvJvF56IaK_U1nvbPkoU747m_K07otelVXZHDpz5MXESx1jseQOx3U3RioOzNqe375EwuYX71W8Gk5efSGKXtGMjTrtBXwHCi2Qq4B4wNefaoJoS8DsMs9polPg2r2Y"/>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl">
+<span class="text-primary font-label uppercase tracking-[0.4em] mb-4 block text-sm font-semibold reveal">Lotus Wellness Sanctuary</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-on-surface mb-8 leading-tight tracking-tight reveal" style="transition-delay: 100ms">Ruh va tana oromi</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed reveal" style="transition-delay: 200ms">
+                Tabiiy elementlar va zamonaviy texnologiyalar uyg'unligi orqali haqiqiy xotirjamlik olamiga sho'ng'ing.
+            </p>
+<div class="mt-12 flex flex-col md:flex-row gap-6 justify-center reveal" style="transition-delay: 300ms">
+<button class="gold-gradient-btn text-on-primary px-10 py-4 rounded-full font-label font-semibold shadow-xl shadow-primary/25">Hozir band qilish</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-on-surface px-10 py-4 rounded-full font-label font-semibold hover:bg-white/20 transition-all">Xizmatlar bilan tanishish</button>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-32 px-6 md:px-12 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6">Bizning muolajalarimiz</h2>
+<p class="text-on-surface-variant leading-relaxed">Har bir muolaja sizning ehtiyojlaringizga moslashtirilgan bo'lib, eng yuqori darajadagi malakali mutaxassislar tomonidan amalga oshiriladi.</p>
+</div>
+<div class="hidden md:block h-[1px] bg-outline-variant flex-grow mx-12 mb-4 opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Massage (Large) -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low h-[400px] reveal">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 parallax-img" data-alt="close-up of massage stones on a person back in a dimly lit luxury spa environment with steam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTv3584f6xUhXB7zA55gYO3sgM084rnogLlA7JT1hZAlnj7PfuDDtgnNnfYvnquUjc_8v6hTG-NACOMMaIxqJ9UVWepwDT29g8EYz-eIqMdu8TrRd868MFE9AFxLABjKnzLoyCWQDBwVppDDvED8hJ7szOUQ_yJ5MThrJJompdzraOranVKnZeUabOOl4nczQh9A252HJWdCRLt2FQhnr3RpDcX3XT7uy5DxtL8pcT8eEk1bNQtzZKUDdbVRtigNrIvvHkDbqupIk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-10">
+<h3 class="font-headline text-3xl text-white mb-2">Terapevtik Massaj</h3>
+<p class="text-white/80 max-w-md font-light">Tanadagi charchoqni chiqaruvchi va qon aylanishini yaxshilovchi professional massaj turlari.</p>
+</div>
+</div>
+<!-- Hamom -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low h-[400px] reveal" style="transition-delay: 100ms">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 parallax-img" data-alt="traditional luxury hammam with marble finishes and steam rising under soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxtUr2Oq4nNDsn1aiL3kxnTmnnQ6sQJf4RmJvKDDmrPeRUDqxYXbDV6pVyOPiWPNO7nMZlepkjDRwAEU5aq0RFca2gBUTyMbl7Pd0d3NAVfGQDIyQU3L6zFLTuBtKaCBbxgKPsFZ-MKWfLUWNaSbCBdiVD4Ye71Gc05d6UbxOHU35WCdTThfWzJd2UT40C2LyfjddkiHDb---n9Zq9nmS5-GQ7MY8_ahX8_wD4I9XAQiTt_b1CkhAzmY8KgDtFHm3dyB970bzk8GU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 p-10">
+<h3 class="font-headline text-2xl text-white mb-2">Turk Hamomi</h3>
+<p class="text-white/80 font-light">Qadimiy an'analar va zamonaviy qulaylik.</p>
+</div>
+</div>
+<!-- Sauna -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low h-[450px] reveal">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 parallax-img" data-alt="modern wooden sauna interior with soft lighting and clean minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAny4RnmDxfClL8fI-FC7fyebCKbDEbgGQkFGSs_CpJFjc6uETWfhfUEiDpV7kGoiqjyShq0FqaSjUoSSxTj6viI84vwJihoST6nRE5fUYDHNgR0f_tH85fIF8EVRdSMkeeVvJDzZV5fEd6Z9TR0wDNiIX1NoiJP8g0fjBVgkasWhbu_c6LRfsmul5sCYxbvPFkiCWyCRMejSj2opLaioM9fk9a78sRzvzgvv1GE_zLyFb5uQRjaxdyPgzjoFCHI6XoBGVnsYo9ccc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 p-10">
+<h3 class="font-headline text-2xl text-white mb-2">Fin Saunasi</h3>
+<p class="text-white/80 font-light">Tana toksinlaridan xalos bo'lish va immunitetni mustahkamlash.</p>
+</div>
+</div>
+<!-- Pool (Large) -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low h-[450px] reveal" style="transition-delay: 100ms">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 parallax-img" data-alt="indoor luxury infinity pool with turquoise water and marble columns reflecting the light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0bteNoQw7zl0mCKwkigBZHcjW5Li4al99RHrjH4QT4cNT0y0jTvHP-OO2J8CKm60fzPdJuwNpspXnFuioPta1NCtDOEG8eJHI9nlCFdNQdSMP52L2jw1X0uFn0qPUuX5QltWdGl3IUNclLwZEJId8cKhodbKbu3ErKih1cArGDaqiANuZ6eEc3M1e7P70XHdyjIM22xMY5391Rk5Ezk9q12j300-BWVBdLV30M0dD7_oJuu8iPH1URzlUUVlegIPjt1A0XEHSiKQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-10">
+<h3 class="font-headline text-3xl text-white mb-2">Yopiq Hovuz</h3>
+<p class="text-white/80 max-w-md font-light">Harorat nazorat qilinadigan kristaldek tiniq suv va dam olish zonalari.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Packages -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20 reveal">
+<span class="text-primary font-label uppercase tracking-widest text-sm mb-4 block">Eksklyuziv takliflar</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface">Wellness Paketlar</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Relax Package -->
+<div class="bg-surface p-12 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 reveal">
+<h3 class="font-headline text-2xl mb-2">Relax Paket</h3>
+<p class="text-on-surface-variant text-sm mb-8">Yengil hordiq chiqarishni xohlovchilar uchun</p>
+<div class="text-4xl font-headline text-primary mb-8">450,000 <span class="text-sm font-body text-on-surface-variant tracking-normal">UZS</span></div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            60 daqiqa massaj
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Hovuz va sauna (cheksiz)
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Fitnes markazi
+                        </li>
+</ul>
+<button class="w-full py-4 border border-outline text-on-surface rounded-full font-label font-medium hover:bg-on-surface hover:text-surface transition-all">Tanlash</button>
+</div>
+<!-- VIP Package (Featured) -->
+<div class="bg-white dark:bg-stone-900 p-12 rounded-xl flex flex-col h-full border-2 border-primary shadow-2xl shadow-primary/10 relative transform md:-translate-y-4 reveal" style="transition-delay: 150ms">
+<div class="absolute top-0 right-12 transform -translate-y-1/2 bg-primary text-white px-4 py-1 text-xs font-label uppercase tracking-widest rounded-full">Ommabop</div>
+<h3 class="font-headline text-2xl mb-2">VIP Sanctuary</h3>
+<p class="text-on-surface-variant text-sm mb-8">To'liq qayta tiklanish va hashamat</p>
+<div class="text-4xl font-headline text-primary mb-8">1,200,000 <span class="text-sm font-body text-on-surface-variant tracking-normal">UZS</span></div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Premium 120 daqiqa muolaja
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Individual hamom seansi
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Detoks menyu va ichimliklar
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Maxsus kiyinish xonasi
+                        </li>
+</ul>
+<button class="w-full py-4 gold-gradient-btn text-white rounded-full font-label font-bold shadow-lg shadow-primary/20">Hozir band qilish</button>
+</div>
+<!-- Couple Package -->
+<div class="bg-surface p-12 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 reveal" style="transition-delay: 300ms">
+<h3 class="font-headline text-2xl mb-2">Couple's Retreat</h3>
+<p class="text-on-surface-variant text-sm mb-8">Ikki kishi uchun romantik lahzalar</p>
+<div class="text-4xl font-headline text-primary mb-8">1,800,000 <span class="text-sm font-body text-on-surface-variant tracking-normal">UZS</span></div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Parallel juftlik massaji
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Shaxsiy jacuzzi xonasi
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Mevalar va shampan vinosi
+                        </li>
+</ul>
+<button class="w-full py-4 border border-outline text-on-surface rounded-full font-label font-medium hover:bg-on-surface hover:text-surface transition-all">Tanlash</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 reveal">
+<h2 class="font-headline text-4xl text-on-surface mb-4">Galereya</h2>
+<div class="w-24 h-1 bg-primary"></div>
+</div>
+<div class="columns-1 md:columns-3 gap-8 space-y-8">
+<div class="break-inside-avoid overflow-hidden rounded-xl bg-surface-container reveal">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="serene wellness room with wooden design elements and candles reflecting in glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDxhNiA7KeeVUe3hLTBV6lcz_VkLcsOZu_g3FfPo5Tv0kG-1zxEe1UoRrple2oTY_Kj3J5Uht_TFBudn08vjkV7t-Q4_MO03NTV-ck73G_3CzISFgydT_VQaSTzEZOv4j97gwj6aY9ZyYEAJ1f8Aa8_H1VVs0j6R5Xh_hnmjn5QDP7dp2hBZcZn9JfG8BDCvDsIMyNYK9ZMlwBPmZaMNl5ffyYeiewsjl-plFpQHxY7Wm5LRVvxVkFXLnc8TVutwE_wswGvmJbFRw"/>
+</div>
+<div class="break-inside-avoid overflow-hidden rounded-xl bg-surface-container reveal" style="transition-delay: 100ms">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="luxury hotel spa reception area with marble desk and warm professional welcome atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyj2zjSsCYPJWAJ89GZr_GG8EkZSm1PTwxVBCHROUKyqqAK1eQsWP78SLNw8DbRag-Karwo7aflkinG7BF0peMcFt_CaB_-NZgg16HaSiFznR-H7FVw9Ebr5k2JDg8IUj5ZVrnTTZFhZHaRz1N5VuXbUI9W9WzwfD9bqbA7P4Lkspu-FF7v50NosebGRsdgCo0E3-uZbeuWWFGHItmAtX4xFEOmgu_8nmbvbcke8pCMFtMJd9Aqmu_yW7MLzEfDSy5cJ2Wm2D33Hg"/>
+</div>
+<div class="break-inside-avoid overflow-hidden rounded-xl bg-surface-container reveal" style="transition-delay: 200ms">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="relaxing steam room with elegant tile work and soft misty atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-NdO7_Avuy6VWLyQ6HteOlybBVo9dbeaLV5Emh5aybnZjFGPo7vRUNnQW7O5OyoAZ6PMq5dkWJLAX6edx8XL7WfAJe8mxnn0BgTANJFUR0MZuRwoJ_k5MsknK91JvpkiwAogr2IkwO_FjDkaQ9sQKnUIVtwZCBA4PoVa6PvXvkTFo4Q8azbEmtkON8i1Zd_nMVKJnTIrEWbDZvqaVVmFZTbGs4lGFhZyS0UBuLu0S2XPUEXt4XG3T4Zz9RuJ5bS2997fQhYtjRKs"/>
+</div>
+<div class="break-inside-avoid overflow-hidden rounded-xl bg-surface-container reveal">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="lifestyle shot of a person relaxing by a luxury swimming pool with a healthy drink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjxcsRWmvttWBzAG70cQKG3HknFfCaQt-Bk_Ni0IU4VrNxBwxCG8vpA6g4PpH4AthCRJw8LLG0JlyF5F87l83yNPWYUNX9VSuqLUrJNtTWaEFZHdc0cZL5n5P0pRghZ-oWAN216eF_4AvCrnS_FpgGgOBB-xhCQUk5h-tWee8ATV2FX9cDP82JLEpDYk6phXMB2YxXkK8aRawI7yY79cfb_cWeXeaoh-WeRqWPCTi0htEYofM2PtoyQMk_pvv_34wgzLyadGNXJGE"/>
+</div>
+<div class="break-inside-avoid overflow-hidden rounded-xl bg-surface-container reveal" style="transition-delay: 100ms">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="essential oils and spa accessories arranged on a clean wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJDgB5U4Esepi633iqB25zQMXDBtBvBrDnNKnBBbhlzYS89AoQSrLrlrnhVZku9EB0pfY0D07nE6YX4v8quxE9Ym8GAZeylvsRNGgPVBs3N78IurF32kcUfm7bAwvtwAuRy3CALZaFNjBpmnVZntNRUOk-244yhH2LMS13X0YdFD3PAkqgkEaATqJvqsvuQZIRM6s_Tj01SdU_i724d12VuE8YdSXMTq0a3YNU6UIZJbb9QGLHlRb_Uevym55tkf7Pie8oC-I05WA"/>
+</div>
+<div class="break-inside-avoid overflow-hidden rounded-xl bg-surface-container reveal" style="transition-delay: 200ms">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="high-end luxury hotel corridor leading to the spa area with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn5TZAf4ul2CnRyZcTbGlRr1GcWsbqVp_xETwYrLFEprDTNlEtc9rizEdqS7VCLaZD4ImPeBuls_iL3pT-WFHYLyBqKd33oQYEppYQurKCwDq9vTHtf7L4dgHwUlq6DiyQOOIj_DUJ9v4rfuY7nQ4EqyZopLvAuyWnKgfJ_0Q1MM33pSGuSAgjYrvWJ33DWIG6l2FdPdUBCgcDX_1AihLfOv78JmMU4hk-k9VTHYhEoH3CfTE28cLe4moBOLJXWf00espkJDhY6eI"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-stone-950 w-full border-t border-stone-200 dark:border-stone-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-7xl mx-auto">
+<div class="text-xl font-headline italic text-amber-800 dark:text-amber-400">LOTUS Mehmonxonasi</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-inter text-sm tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline-offset-4 hover:underline transition-all" href="#">Maxfiylik siyosati</a>
+<a class="font-inter text-sm tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline-offset-4 hover:underline transition-all" href="#">Foydalanish shartlari</a>
+<a class="font-inter text-sm tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline-offset-4 hover:underline transition-all" href="#">FAQ</a>
+<a class="font-inter text-sm tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-amber-600 dark:hover:text-amber-400 underline-offset-4 hover:underline transition-all" href="#">Xarita</a>
+</div>
+<div class="font-inter text-sm tracking-wide text-stone-400 text-center md:text-right">
+                © 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.
+            </div>
+</div>
+</footer>
+<script>
+        // Reveal on Scroll logic
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Parallax Effect logic
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            
+            // Hero parallax
+            const heroImg = document.getElementById('hero-img');
+            if (heroImg) {
+                const heroPos = scrollY * 0.4;
+                heroImg.style.transform = `scale(1.1) translateY(${heroPos}px)`;
+            }
+
+            // Treatment cards parallax
+            document.querySelectorAll('.parallax-img').forEach((img) => {
+                if (img.id === 'hero-img') return;
+                const parent = img.parentElement;
+                const rect = parent.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    // Calculate relative scroll position within the element
+                    const relativeScroll = (windowHeight - rect.top) / (windowHeight + rect.height);
+                    const translateY = (relativeScroll - 0.5) * 60; // adjust 60 for intensity
+                    img.style.transform = `scale(1.2) translateY(${translateY}px)`;
+                }
+            });
+        });
+
+        // Initialize reveal for elements already in viewport
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body></html>

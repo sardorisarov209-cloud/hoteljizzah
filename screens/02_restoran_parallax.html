@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#5d4201",
+              "primary-container": "#c5a059",
+              "on-surface": "#1b1c1c",
+              "outline-variant": "#d1c5b4",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e4e2e1",
+              "on-background": "#1b1c1c",
+              "secondary-container": "#e2dfde",
+              "on-secondary-fixed": "#1c1b1b",
+              "on-secondary-container": "#636262",
+              "surface-variant": "#e4e2e1",
+              "tertiary-fixed": "#e4e2de",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#a6a5a2",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c8c6c3",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#474744",
+              "error": "#ba1a1a",
+              "surface-tint": "#775a19",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#261900",
+              "on-tertiary-container": "#3b3b39",
+              "tertiary": "#5e5e5c",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fcf9f8",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-primary-container": "#4e3700",
+              "on-tertiary-fixed": "#1b1c1a",
+              "on-error": "#ffffff",
+              "primary-fixed": "#ffdea5",
+              "outline": "#7f7667",
+              "secondary": "#5f5e5e",
+              "inverse-primary": "#e9c176",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae7e7",
+              "primary": "#775a19",
+              "surface-container": "#f0eded",
+              "background": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "on-surface-variant": "#4e4639",
+              "secondary-fixed": "#e5e2e1",
+              "on-secondary-fixed-variant": "#474746",
+              "inverse-surface": "#303030",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .hero-gradient {
+        background: linear-gradient(to bottom, rgba(27, 28, 28, 0.4), rgba(27, 28, 28, 0.8));
+      }
+      
+      /* Scroll Reveal Styles */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.21, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Parallax Container */
+      .parallax-container {
+        overflow: hidden;
+      }
+      .parallax-bg {
+        transform: translateY(0);
+        will-change: transform;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-b border-stone-200/20 dark:border-stone-800/20 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif font-bold tracking-tighter text-amber-800 dark:text-amber-500">LOTUS</div>
+<div class="hidden md:flex gap-10">
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Xonalar</a>
+<a class="font-serif tracking-tight text-lg text-amber-800 dark:text-amber-400 border-b-2 border-amber-800 dark:border-amber-400 pb-1" href="#">Restoran</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">SPA</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Galereya</a>
+<a class="font-serif tracking-tight text-lg text-stone-600 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Biz haqimizda</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-stone-600 cursor-pointer" data-icon="dark_mode">dark_mode</span>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-medium shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all">Band qilish</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen flex items-center justify-center overflow-hidden parallax-container">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover scale-110 parallax-bg" data-alt="luxury restaurant interior with golden lighting, elegant table settings, and floor to ceiling windows overlooking a sunset cityscape" id="hero-parallax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjg7sB_6y9iS1yDkFWKl2ztOddK-hqkRsQzauWuQUS-4BE3Kn_S-PMUJ3K4335ytiQkeLMjgTcQjAD6RjQUkMj7kpEazG-lM9qAmTAGHIgOqW4Bksg4xjdUAYAl81TySVrB1E7Lrd82etwJR_quC2CYZmLBjA36ZnPTXLFToIw90HbWx-vE_Qm3fTe6AmSX3Z8U66tVlENf7NqcIbuCjlREm8d0cQmeltgevy-XK3OEHZ1ndBRFnBpmsEwF4Q8wJviI5Kjm27RFHc"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl reveal active">
+<span class="text-primary-fixed uppercase tracking-[0.4em] text-sm mb-6 block font-label">Gastronomik San'at Markazi</span>
+<h1 class="text-surface font-headline text-5xl md:text-7xl mb-8 leading-tight tracking-tight">LOTUS Restorani - Milliy va Evropa taomlari</h1>
+<p class="text-surface-container-highest font-body text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Har bir luqmada an'analar va zamonaviy ijodning uyg'unligini his eting. Bizning oshpazlarimiz siz uchun haqiqiy san'at asarlarini yaratishadi.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-xl font-medium tracking-wide hover:bg-primary-container transition-all" href="#reservation">Stol band qilish</a>
+<a class="glass-card border border-white/20 text-white px-10 py-4 rounded-xl font-medium tracking-wide hover:bg-white/10 transition-all" href="#menu">Menyuni ko'rish</a>
+</div>
+</div>
+</header>
+<!-- Chef's Special Section (Asymmetric Bento) -->
+<section class="py-24 md:py-32 px-6 max-w-screen-2xl mx-auto bg-surface">
+<div class="mb-20 text-center md:text-left reveal">
+<h2 class="text-primary font-headline text-4xl md:text-5xl mb-4 italic">Chef's Special</h2>
+<p class="text-on-surface-variant font-body max-w-xl">Bosh oshpazimiz tomonidan maxsus tanlab olingan va eksklyuziv tayyorlanadigan mavsumiy durdonalar.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-7 relative group overflow-hidden rounded-full min-h-[500px] reveal">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="gourmet plated steak with seasonal vegetables and red wine reduction sauce, dramatic lighting with golden highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCqTsnvJIc4jtfb5wnmDDFGIN7WNcmKkV7oGF7Hf7M-aUVTqnUnSAvZeHu5bcCdHlZHmkokDW3H_vsJk0OzXty8wM0Dgn4Zj6Noar5XXyW1NCo9JC3RiF5NNiUkRWtzLUp7GN9-4AJdS5jV1MhXqNY4vMMD8ql5i_ExHZ7GpGDH0-j15F8dfgEFkVaeS-MtWgu5VPg1Siqjxa7O6Fk4Xjakp6Ipk9Lp4CYi6A7AkWuP6t0MA-Q3t-bzQpxS1xMKrgEhq8CH4Hhl00"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-16 left-16 text-white max-w-xs">
+<span class="text-primary-container font-label uppercase text-xs tracking-widest">Afsonaviy Ta'm</span>
+<h3 class="text-3xl font-headline mt-2">Premium Wagyu Steak</h3>
+<p class="mt-4 font-body text-surface-container-highest">Olovda pishirilgan va maxsus ziravorlar bilan boyitilgan, og'izda eriydigan go'sht.</p>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-rows-2 gap-8">
+<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-center border border-outline-variant/10 reveal" style="transition-delay: 200ms;">
+<span class="text-primary font-serif text-3xl mb-4 italic">Osh - Sulton Taom</span>
+<p class="text-on-surface-variant leading-relaxed">An'anaviy usulda, o'tin alangasida pishirilgan to'y oshi. Devzira guruchi va tanlangan qo'y go'shti.</p>
+<div class="mt-8 flex items-center text-primary font-medium gap-2 cursor-pointer group">
+<span>Batafsil</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl reveal" style="transition-delay: 400ms;">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="fresh gourmet seafood platter with oysters, prawns, and lemon wedges on a bed of ice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVkYhhF0KwXnMkGBZc7UsQXu_mKNsxiNy5TYq0gAN1Xuy-fjfqkCkLoxyokD8-cLe5TPBUS_jbPq8zh4v5UyyGILh40pINtuc_Xy4NH5XjiHCFpM9wkf5Hr1TA8675dbR6peWtnFkViihXZvnVJfVsxv-2rTDq5NX_CVyrD6THq2HUWPNWlHdBPv_pYRt9f8ptmVT1UNabGeSu2Z8f8IoNDrZT5JXO4SJgvZ5LbQU3BjYMnJwxZEDwHWvOFWtIirb8id5HSoyWSVU"/>
+<div class="absolute inset-0 bg-on-surface/30 group-hover:bg-on-surface/10 transition-colors"></div>
+<div class="absolute top-8 left-8">
+<h4 class="text-white font-headline text-2xl">Dengiz Ne'matlari</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Section (Glassmorphism Cards) -->
+<section class="py-24 bg-surface-container-low" id="menu">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal">
+<div>
+<h2 class="text-on-surface font-headline text-4xl md:text-5xl mb-4">Bizning Menyu</h2>
+<p class="text-on-surface-variant font-body">Har bir taomda sifat va nafosat.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-on-primary transition-all">Hammasi</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-medium hover:border-primary transition-all">Milliy</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-medium hover:border-primary transition-all">Evropa</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group relative bg-surface p-4 rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 reveal">
+<div class="overflow-hidden rounded-xl h-64 mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="luxury traditional uzbek pilaf in a ceramic plate with detailed patterns, warm side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTpaHWMzu32Ac4GeCjwRSBR4XyXh-qEuM2Z-PAELupjAVsnmZA0x9RV8hUwzSmQUO1xeqYMq_91RuZDCQeIcxxuRPPqRcgy4fHStCW6sdcOwOAsZTGFi89bVZq6Db2c_xhpXzH9ThFC1hUrlCyV6tv0wKjxe4M5pHJnkqqQEc8qeMcYpVmJqVg2Ks-r2DpABnUnw02hP8sp1VnRFLGXXnlgzMQf6rl2ab4W3L1R96YXlV6cCHvX5m8uLO4s2QBrVjKTG6aECbKqKI"/>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Zarafshon Oshi</h3>
+<span class="text-primary font-medium">85,000 UZS</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Lazzatli qo'y go'shti, sarg'ish sabzi va maxsus Lotus ziravorlari bilan tayyorlangan milliy iftixorimiz.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface p-4 rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 reveal" style="transition-delay: 150ms;">
+<div class="overflow-hidden rounded-xl h-64 mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="fresh grilled salmon fillet with asparagus and lemon butter sauce on a white plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1S068pS64kAlO2dYc4AYBZ8GH-2NDy7LeuxAikARiC8Bw-bFFdfuPPE7J1EifFf1MnXYKoydYba9wHF-D5VTR_C1hINIwD6M23qzbo8fqIyo8Qyj9KkXwvcGlHDqU7v5mWcDiuR58sq0FKAu3CKgKL9DHXihFQ8ydTRJLzJ4l-6wblH8GGygzdZju10X1wDhDyj8UOWZAgZh-VYFjYMgjmcpCRl5sozRrLI-KLA_0Hg5NpI2SIRcnXghnuskqrt0zxcWxyY_H_yo"/>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Nordik Salmon</h3>
+<span class="text-primary font-medium">145,000 UZS</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Grilda pishirilgan yangi salmon balig'i, limonli qayla va ismaloq garniri bilan taqdim etiladi.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface p-4 rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 reveal" style="transition-delay: 300ms;">
+<div class="overflow-hidden rounded-xl h-64 mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="truffle mushroom risotto with shaved parmesan cheese and fresh herbs in a deep ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGvOKYXZ1ILneR6qwyTnSGL50WbEX3Kg9hcdf1ASDyN7Oe28qEz-fZuJWL1zPIfKQ9yj7-IoG9kZTPscTDuwBTt7hm0tKsznAh4PGmOrRxzEkcKrZjFe5NEFljd_hq-kShLjwegti1Ir2V3DROwr408m5pBW9qZzJD-2OWP4jZBa-CDPKuAS2epaDylwVcxeiLbLZZxJH5I8mcboOqtocP0jc-dRl3PrdPWi2XXXC_03kV-Gsv8ON_sIAA-N4rserEFu855V0aViA"/>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Truffle Risotto</h3>
+<span class="text-primary font-medium">110,000 UZS</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Italiya an'analari asosida tayyorlangan, qora truffle va Parmezan pishlog'i bilan boyitilgan guruchli taom.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation Section -->
+<section class="py-32 relative overflow-hidden" id="reservation">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover scale-110 parallax-bg" data-alt="blurred background of a cozy restaurant at night with warm bokeh lights and romantic atmosphere" id="reservation-parallax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7M4xbSConkHVZooARF429NLcdNcJO4-THKyj5-uGvIdVmE1h52fRTIiBygRblJn7wdoPBNR5v1K6CK8-f2unfvv0S_YE21G8f_9zMHmBRLmXs-hTg9h2xYUy9HqEv6-6NtN2on2WdQgGHO5qT8GsazunOhasfgn1vPhTvoDWsaRdQkVmYrrEfo6UGuHYvv-J2_BsOGWXzKqQ3kH8OaLmGmxHjGhEjNaGEHnHyJojDBBnMNKjXUv4P6u2po8EVEa9GstHRcVs07b8"/>
+<div class="absolute inset-0 bg-on-surface/80 backdrop-blur-sm"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 reveal">
+<div class="glass-card p-10 md:p-16 rounded-xl border border-white/10 shadow-2xl">
+<div class="text-center mb-12">
+<h2 class="text-on-surface font-headline text-4xl mb-4">Stol band qilish</h2>
+<p class="text-on-surface-variant">Maxsus kechangizni biz bilan rejalashtiring.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-label">Ismingiz</label>
+<input class="w-full bg-transparent border-b border-outline-variant/40 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Ismingizni kiriting" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-label">Telefon</label>
+<input class="w-full bg-transparent border-b border-outline-variant/40 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="+998 90 123 45 67" type="tel"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-label">Sana</label>
+<input class="w-full bg-transparent border-b border-outline-variant/40 py-3 focus:outline-none focus:border-primary transition-colors" type="date"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-label">Mehmonlar soni</label>
+<select class="w-full bg-transparent border-b border-outline-variant/40 py-3 focus:outline-none focus:border-primary transition-colors">
+<option>2 kishi</option>
+<option>4 kishi</option>
+<option>6+ kishi</option>
+</select>
+</div>
+<div class="md:col-span-2 mt-8">
+<button class="w-full bg-primary text-on-primary py-5 rounded-xl font-medium text-lg hover:bg-primary-container shadow-xl shadow-primary/20 transition-all active:scale-[0.98]" type="submit">Tasdiqlash</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-stone-950 w-full py-20 px-12 border-t border-stone-200 dark:border-stone-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto items-start text-center md:text-left">
+<div>
+<div class="text-xl font-serif italic text-amber-900 dark:text-amber-400 mb-6">LOTUS Mehmonxonasi</div>
+<p class="text-stone-500 font-serif text-sm leading-relaxed lowercase tracking-wide">O'zbekistonning eng go'zal burchaklaridan birida joylashgan premium dam olish maskani.</p>
+</div>
+<div>
+<h4 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500 mb-6">Menyu</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 font-serif text-sm uppercase tracking-widest hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Maxfiylik siyosati</a></li>
+<li><a class="text-stone-500 font-serif text-sm uppercase tracking-widest hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Foydalanish shartlari</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500 mb-6">Aloqa</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 font-serif text-sm uppercase tracking-widest hover:text-amber-600 dark:hover:text-amber-400 underline decoration-stone-300 underline-offset-8 transition-all" href="#">Aloqa</a></li>
+<li class="text-stone-500 font-serif text-sm uppercase tracking-widest">+998 71 200 00 00</li>
+</ul>
+</div>
+<div>
+<h4 class="font-serif text-sm uppercase tracking-widest text-amber-800 dark:text-amber-500 mb-6">Manzil</h4>
+<p class="text-stone-500 font-serif text-sm uppercase tracking-widest leading-relaxed">Toshkent shahri, Amir Temur ko'chasi, 108-uy</p>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-stone-200 dark:border-stone-900 text-center">
+<p class="text-stone-500 font-serif text-sm uppercase tracking-widest">© 2024 LOTUS Mehmonxonasi. Barcha huquqlar himoyalangan.</p>
+</div>
+</footer>
+<script>
+    // Parallax Effect
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        
+        // Hero parallax
+        const heroBg = document.getElementById('hero-parallax');
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scrollY * 0.4}px) scale(1.1)`;
+        }
+
+        // Reservation parallax
+        const resBg = document.getElementById('reservation-parallax');
+        const resSection = document.getElementById('reservation');
+        if (resBg && resSection) {
+            const sectionTop = resSection.offsetTop;
+            const viewportOffset = scrollY - sectionTop;
+            resBg.style.transform = `translateY(${viewportOffset * 0.2}px) scale(1.1)`;
+        }
+    });
+
+    // Scroll Reveal Effect
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    // Initial call to reveal elements already in viewport
+    document.addEventListener("DOMContentLoaded", reveal);
+</script>
+</body></html>
